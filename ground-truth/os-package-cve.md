@@ -21,9 +21,12 @@ is never adjusted to match a scanner's output.
 - Vulnerability ID: CVE-2022-29458
 - Aliases: none found
 - Affected status: AFFECTED
-- Reference severity: HIGH (per Trivy's classification; NVD itself rates this
-  MEDIUM — noted here as a first example of the severity disagreements the
-  project is designed to surface)
+- Reference severity: HIGH. Confirmed independently by both scanners and by
+  NVD's own CVSS 3.1 base score of 7.1 (High range is 7.0-8.9). All three
+  sources agree here — no severity disagreement on this particular finding.
+- Fix status cross-check: Grype independently reports fix state "wont-fix"
+  for this CVE in this image, matching the Debian tracker conclusion already
+  recorded above. Two independent confirmations of the same fix status.
 - Fix status: NOT FIXED in the standard Debian archive for stretch.
   Debian's security tracker explicitly notes: "[stretch] - ncurses <no-dsa>
   (Minor issue)" — meaning Debian's security team deliberately chose not to
