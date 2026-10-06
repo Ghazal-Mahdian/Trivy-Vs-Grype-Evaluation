@@ -47,3 +47,31 @@ verify each independently:
 - CVE-2018-7169 (passwd) — not yet checked
 
 Do not treat these as confirmed until each has its own verified entry above.
+
+
+## Entry 3
+
+- Package: libc6, libc-bin, multiarch-support
+- Ecosystem: deb (Debian package)
+- Installed version: 2.24-11+deb9u4
+- Vulnerability ID: CVE-2021-3999
+- Aliases: none found
+- Affected status: AFFECTED
+- Reference severity: HIGH (per Grype; glibc getcwd() off-by-one overflow,
+  privilege escalation potential — not independently re-scored against raw
+  NVD CVSS in this pass, flagged for a closer severity check later)
+- Fix status: NOT FIXED. 2.24-11+deb9u4 is confirmed as the FINAL version
+  stretch's glibc ever reached (per Debian's own package history) — no
+  later revision exists. The advisory Grype cites, DLA-3152-1, covers only
+  buster, not stretch, confirming stretch was never patched through any
+  channel for this CVE.
+- Source checked: https://blueprints.launchpad.net/debian/stretch/+source/glibc
+  (version history) and https://security-tracker.debian.org/tracker/DLA-3152-1
+  (confirms buster-only scope)
+- Date reviewed: 2026-10-05
+- Notes: FIRST CONFIRMED DETECTION GAP. Trivy did not report this CVE for
+  libc6/libc-bin/multiarch-support at all, despite it being genuinely
+  present and unfixed. Grype caught it correctly. This is a true Trivy
+  false negative on this image, not a naming/mapping artifact — same
+  package, same version, independently verified.
+

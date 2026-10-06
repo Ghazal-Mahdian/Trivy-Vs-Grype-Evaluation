@@ -23,7 +23,18 @@
       "fix_status": "NOT FIXED (fix exists at 5.24.1-3+deb9u8, one revision ahead of installed version)",
       "source": "https://www.freexian.com/lts/extended/updates/ela-1226-1-perl/",
       "date_reviewed": "2026-10-05"
+    },{
+    
+      "cve_id": "CVE-2021-3999",
+      "packages": ["libc6", "libc-bin", "multiarch-support"],
+      "installed_version": "2.24-11+deb9u4",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "fix_status": "NOT FIXED (2.24-11+deb9u4 is the final stretch glibc version; DLA-3152-1 covers buster only, not stretch)",
+      "source": "https://blueprints.launchpad.net/debian/stretch/+source/glibc",
+      "date_reviewed": "2026-10-05"
     }
+
   ]
 }
 
