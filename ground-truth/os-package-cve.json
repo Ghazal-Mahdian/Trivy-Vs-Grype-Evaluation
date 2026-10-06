@@ -1,0 +1,29 @@
+{
+  "image": "os-package-cve",
+  "base_image": "debian:stretch-slim",
+  "base_digest": "debian:stretch-slim@sha256:abaa313c7e1dfe16069a1a42fa254014780f165d4fd084844602edbe29915e70",
+  "platform": "linux/amd64",
+  "entries": [
+    {
+      "cve_id": "CVE-2022-29458",
+      "packages": ["libncursesw5", "libtinfo5", "ncurses-base", "ncurses-bin"],
+      "installed_version": "6.0+20161126-1+deb9u2",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "fix_status": "NOT FIXED (wont-fix in standard Debian archive for stretch)",
+      "source": "https://security-tracker.debian.org/tracker/CVE-2022-29458",
+      "date_reviewed": "2026-09-26"
+    },
+    {
+      "cve_id": "CVE-2020-16156",
+      "packages": ["perl-base"],
+      "installed_version": "5.24.1-3+deb9u7",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "fix_status": "NOT FIXED (fix exists at 5.24.1-3+deb9u8, one revision ahead of installed version)",
+      "source": "https://www.freexian.com/lts/extended/updates/ela-1226-1-perl/",
+      "date_reviewed": "2026-10-05"
+    }
+  ]
+}
+
