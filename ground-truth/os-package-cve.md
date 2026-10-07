@@ -75,3 +75,23 @@ Do not treat these as confirmed until each has its own verified entry above.
   false negative on this image, not a naming/mapping artifact — same
   package, same version, independently verified.
 
+## Entry 4
+
+- Package: passwd
+- Ecosystem: deb (Debian package)
+- Installed version: 1:4.4-4.1+deb9u1
+- Vulnerability ID: CVE-2018-7169
+- Aliases: none found
+- Affected status: AFFECTED
+- Reference severity: MEDIUM (CVSS 3.0 base score 5.3 — first non-HIGH entry
+  in this dataset, useful for testing P1 vs P2 gate policy behavior)
+- Fix status: NOT FIXED at installed version. Debian tracker confirms
+  1:4.4-4.1+deb9u1 vulnerable, fixed at 1:4.4-4.1+deb9u2.
+- Source checked: https://security-tracker.debian.org/tracker/CVE-2018-7169
+- Date reviewed: 2026-10-05
+- Notes: Searched specifically hoping for a false-positive candidate (for
+  precision measurement) — this turned out to be a genuine, undisputed
+  vulnerability instead. Logging the honest result: core OS CVEs on a
+  frozen EOL distro are mostly real, so false positives likely need a
+  purpose-built test case (the vendor-backported-fix image planned later)
+  rather than being found by sampling this image further.

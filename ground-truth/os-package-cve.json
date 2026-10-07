@@ -33,7 +33,17 @@
       "fix_status": "NOT FIXED (2.24-11+deb9u4 is the final stretch glibc version; DLA-3152-1 covers buster only, not stretch)",
       "source": "https://blueprints.launchpad.net/debian/stretch/+source/glibc",
       "date_reviewed": "2026-10-05"
-    }
+    },
+      {
+      "cve_id": "CVE-2018-7169",
+      "packages": ["passwd"],
+      "installed_version": "1:4.4-4.1+deb9u1",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "fix_status": "NOT FIXED (fix exists at 1:4.4-4.1+deb9u2, one revision ahead)",
+      "source": "https://security-tracker.debian.org/tracker/CVE-2018-7169",
+      "date_reviewed": "2026-10-05"
+    }	
 
   ]
 }
