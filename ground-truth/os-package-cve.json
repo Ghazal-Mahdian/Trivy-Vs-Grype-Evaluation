@@ -43,7 +43,18 @@
       "fix_status": "NOT FIXED (fix exists at 1:4.4-4.1+deb9u2, one revision ahead)",
       "source": "https://security-tracker.debian.org/tracker/CVE-2018-7169",
       "date_reviewed": "2026-10-05"
-    }	
+    },
+      {
+      "cve_id": "CVE-2019-1010022",
+      "packages": ["libc6", "libc-bin", "multiarch-support"],
+      "installed_version": "2.24-11+deb9u4",
+      "affected_status": "DISPUTED",
+      "reference_severity": "DISPUTED",
+      "fix_status": "No fix planned - upstream disputes this is a real vulnerability",
+      "source": "https://nvd.nist.gov/vuln/detail/CVE-2019-1010022",
+      "date_reviewed": "2026-10-05"
+    }
+	
 
   ]
 }

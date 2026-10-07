@@ -95,3 +95,38 @@ Do not treat these as confirmed until each has its own verified entry above.
   frozen EOL distro are mostly real, so false positives likely need a
   purpose-built test case (the vendor-backported-fix image planned later)
   rather than being found by sampling this image further.
+
+
+## Entry 5
+
+- Package: libc6, libc-bin, multiarch-support
+- Ecosystem: deb (Debian package)
+- Installed version: 2.24-11+deb9u4
+- Vulnerability ID: CVE-2019-1010022
+- Aliases: GHSA-hqfh-jh33-mj7r
+- Affected status: DISPUTED — upstream glibc maintainers have stated this
+  is "not treated as a security issue" and have no plans to address it.
+  Multiple independent trackers (Chainguard, Yocto's CVE exclusion list)
+  mark it "not affected" / excluded. NVD still lists it, which is why
+  scanners that match purely against NVD still surface it.
+- Reference severity: DISPUTED — not a real vulnerability per upstream, so
+  "severity" is not meaningfully applicable. Grype itself rates it
+  Negligible, which suggests Grype's own data source already reflects the
+  dispute even though it still reports the CVE at all.
+- Fix status: No fix exists or is planned — upstream considers there is
+  nothing to fix.
+- Source checked: upstream glibc maintainer statements (quoted via
+  buildroot and Yocto CVE exclusion lists), Chainguard security advisory
+  CGA-8m4j-hg3f-5xv5, https://nvd.nist.gov/vuln/detail/CVE-2019-1010022
+- Date reviewed: 2026-10-05
+- Notes: FIRST DISPUTED/FALSE-POSITIVE-STYLE CASE. This is the kind of
+  finding a strict precision metric should probably NOT count as a true
+  positive against either scanner, since the underlying "vulnerability" is
+  not accepted as real by the software's own maintainers. Grype's
+  Negligible rating means this would not trigger a block under P1 or P2
+  gate policy regardless — a good illustration of why severity-aware
+  gating matters: the finding stays in the report (as the project's
+  "below-threshold findings retained" rule requires) without blocking a
+  release.
+
+
