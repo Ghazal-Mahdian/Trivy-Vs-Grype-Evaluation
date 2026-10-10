@@ -3,10 +3,10 @@
   "Trivy": {
     "Version": "0.74.0"
   },
-  "ReportID": "01a106dc-ee39-7128-bae1-a5ad7fa5d5a7",
-  "CreatedAt": "2026-10-04T05:21:44.633236-07:00",
-  "ArtifactID": "sha256:c6a68bf9007ccfe134bcc40c02db41f956b630200a85ecb833600ee3c51c256d",
-  "ArtifactName": "os-package-cve:test",
+  "ReportID": "01a12820-5dc3-7704-8f6b-98cff0152569",
+  "CreatedAt": "2026-10-10T16:22:52.227461-07:00",
+  "ArtifactID": "sha256:bb86ffd77e4607fabf3eb0d8186e33793e0db0f4384fbab6492a00c1ec53434f",
+  "ArtifactName": "/Users/ghazal/scan-artifacts/os-package-cve.tar",
   "ArtifactType": "container_image",
   "Metadata": {
     "Size": 58980864,
@@ -15,7 +15,7 @@
       "Name": "9.13",
       "EOSL": true
     },
-    "ImageID": "sha256:123a37505602946f68b26bca8d91341cd1b30026146babee551d35e8a38c8135",
+    "ImageID": "sha256:b2677026a5d270a4f49ae4f10de65bd5e770e156d89eff2d2ec9f924cbf5d526",
     "DiffIDs": [
       "sha256:992f38e1a81cbdf2903fab2603f6076f3bef54262b4b2aa5b196515bac953688",
       "sha256:0fe72ccb9b4be3af9f09f2a7d8fa7cd392089560cbe44f8ea17a32aa1c80e2d3",
@@ -24,35 +24,32 @@
     "RepoTags": [
       "os-package-cve:test"
     ],
-    "RepoDigests": [
-      "os-package-cve@sha256:123a37505602946f68b26bca8d91341cd1b30026146babee551d35e8a38c8135"
-    ],
     "Reference": "os-package-cve:test",
     "ImageConfig": {
       "architecture": "amd64",
       "created": "2026-09-27T02:32:01.409162961Z",
       "history": [
         {
-          "created": "2022-06-23T00:22:20Z",
+          "created": "2022-06-23T00:22:20.694615198Z",
           "created_by": "/bin/sh -c #(nop) ADD file:cfad5912b6dd7590713979e5a5e231b1b6873200fde725cb7baf75110d7fa138 in / "
         },
         {
-          "created": "2022-06-23T00:22:20Z",
+          "created": "2022-06-23T00:22:20.980163745Z",
           "created_by": "/bin/sh -c #(nop)  CMD [\"bash\"]",
           "empty_layer": true
         },
         {
-          "created": "2026-09-27T02:31:57Z",
+          "created": "2026-09-27T02:31:57.076966001Z",
           "created_by": "RUN /bin/sh -c echo 'deb http://archive.debian.org/debian stretch main' \u003e /etc/apt/sources.list \u0026\u0026     echo 'Acquire::Check-Valid-Until \"false\";' \u003e /etc/apt/apt.conf.d/99no-check-valid # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-27T02:32:01Z",
+          "created": "2026-09-27T02:32:01.409162961Z",
           "created_by": "RUN /bin/sh -c apt-get update \u0026\u0026     apt-get install -y --no-install-recommends libidn11 \u0026\u0026     rm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-27T02:32:01Z",
+          "created": "2026-09-27T02:32:01.409162961Z",
           "created_by": "CMD [\"sleep\" \"3600\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -98,7 +95,7 @@
   },
   "Results": [
     {
-      "Target": "os-package-cve:test (debian 9.13)",
+      "Target": "/Users/ghazal/scan-artifacts/os-package-cve.tar (debian 9.13)",
       "Class": "os-pkgs",
       "Type": "debian",
       "Packages": [
@@ -6977,7 +6974,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:74a3e8493afeff9b093c824e917310143907633aa7fa1d78f7cdbf541955a7e3",
+          "Fingerprint": "sha256:7e625b852dad8cd979b67d2a50a5ecae79fb149abdca0d6f30db22fe0ff0d073",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -7034,7 +7031,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:649cdad8167f0441e1680006453c148e2f5bd7ac35da4de918e6af657a8efd85",
+          "Fingerprint": "sha256:65460b92dc8d9da4527b347e2debfb004ccbcc7de334c582729f4037039e4f84",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
@@ -7096,7 +7093,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:fa872601b1c709f31521eea8ca0b5017c1253211062bb89b25bd17f7bc6d9a95",
+          "Fingerprint": "sha256:c410fa87c075bacce38675a8e2821c186b53631431469aa81c1926166028ed8a",
           "Title": "coreutils: Non-privileged session can escape to the parent session in chroot",
           "Description": "chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "LOW",
@@ -7156,7 +7153,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:91b19bc7449aba4a90875e3b83e6d66f17d6e8029c09c253b994039b4b1ab480",
+          "Fingerprint": "sha256:67ffd9a7c6d1cb11ddcdcf9702ab9ddabbf23e5fe915a293bb291b56aa1ba51a",
           "Title": "e2fsprogs: out-of-bounds read/write via crafted filesystem",
           "Description": "An out-of-bounds read/write vulnerability was found in e2fsprogs 1.46.5. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem.",
           "Severity": "HIGH",
@@ -7232,7 +7229,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:cbf5183e8406bbc2316abd0973d265ad7b7ada2cd5e7f7a3daf55c04ce6b3f97",
+          "Fingerprint": "sha256:ddce524993e95f7ae7be4a7c5c2cedbe02aba0de7e49a6d02b0326ed0cf01772",
           "Title": "e2fsprogs: out-of-bounds read/write via crafted filesystem",
           "Description": "An out-of-bounds read/write vulnerability was found in e2fsprogs 1.46.5. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem.",
           "Severity": "HIGH",
@@ -7308,7 +7305,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:a80885c100f3d500e3f42cee9f379abf3955d1cae44793cfe7c02d55cb55595f",
+          "Fingerprint": "sha256:29d1ac951fa53deb6c72d9fb144dad2452108aa82361c50232c6a3ec842a6cf3",
           "Title": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
           "Description": "stack_protect_prologue in cfgexpand.c and stack_protect_epilogue in function.c in GNU Compiler Collection (GCC) 4.1 through 8 (under certain circumstances) generate instruction sequences when targeting ARM targets that spill the address of the stack protector guard, which allows an attacker to bypass the protection of -fstack-protector, -fstack-protector-all, -fstack-protector-strong, and -fstack-protector-explicit against stack overflow by controlling what the stack canary is compared against.",
           "Severity": "HIGH",
@@ -7364,7 +7361,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f90c1678d86c6d00b6a32039a829bac85fb2c38beeefb6245af9dbf4c698d4df",
+          "Fingerprint": "sha256:613986a9c405dec6ef22afc24e0a65d639c11ff4c8b06f7174fbf2282dab0e1c",
           "Title": "gnupg2: Cross site request forgery in dirmngr resulting in an information disclosure or denial of service",
           "Description": "GnuPG version 2.1.12 - 2.2.11 contains a Cross ite Request Forgery (CSRF) vulnerability in dirmngr that can result in Attacker controlled CSRF, Information Disclosure, DoS. This attack appear to be exploitable via Victim must perform a WKD request, e.g. enter an email address in the composer window of Thunderbird/Enigmail. This vulnerability appears to have been fixed in after commit 4a4bb874f63741026bd26264c43bb32b1099f060.",
           "Severity": "HIGH",
@@ -7426,7 +7423,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2fe00c33cc070230b89ab2340d3b7b407565aa2f636be12050bda45a2089975b",
+          "Fingerprint": "sha256:7658fa9371a22bc90ee2998bcde4c2b4b5b6a477862d136d8259c1b80f8193ea",
           "Title": "GnuPG: Unenforced configuration allows for apparently valid certifications actually signed by signing subkeys",
           "Description": "GnuPG 2.2.4 and 2.2.5 does not enforce a configuration in which key certification requires an offline master Certify key, which results in apparently valid certifications that occurred only with access to a signing subkey.",
           "Severity": "LOW",
@@ -7484,7 +7481,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ec934f71ca3fd344d8e15efbd73e8244d669473ef6d134a5cd50a803e588bd48",
+          "Fingerprint": "sha256:a792ddc59be1e3058415add88b7107276b76fdc533e0a9b5fda5f3a8e83c86f4",
           "Title": "gnupg2: OpenPGP Key Certification Forgeries with SHA-1",
           "Description": "A flaw was found in the way certificate signatures could be forged using collisions found in the SHA-1 algorithm. An attacker could use this weakness to create forged certificate signatures. This issue affects GnuPG versions before 2.2.18.",
           "Severity": "LOW",
@@ -7546,7 +7543,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f542cc788f388e2212a9c9b50ad6d836bf40a291503eb75742895b99f2b04f44",
+          "Fingerprint": "sha256:a0f5d044876815eac3a496fd5710522b743158801c7ab4137386dcf5ecece3d6",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -7603,7 +7600,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9cfdf10e7bb728e44b11f89649b093cf43961da37b23fb8594ffd894161ccd8e",
+          "Fingerprint": "sha256:5a3031e4b21b9476efd05607322e6b8a4d7e634d5f36c07f6b273aeebf9370dc",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
@@ -7665,7 +7662,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:4ca1431a3584fb36ffa086386dd5e4dd320eb61e07f1a8907a4b0f79cb19d6e2",
+          "Fingerprint": "sha256:b022f3b7af954eaafd95c0f63953085a861649b3d250d7b06b40c16eb5aa3921",
           "Title": "bzip2: bzip2: Data integrity error when decompressing (with data integrity tests fail).",
           "Description": "BZ2_decompress in decompress.c in bzip2 through 1.0.6 has an out-of-bounds write when there are many selectors.",
           "Severity": "CRITICAL",
@@ -7768,7 +7765,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:82e535f38311ef6392cf7d0aa0743415772a28bb8f00fa3bde61a0a62f92445a",
+          "Fingerprint": "sha256:b90608d1af691ef667cfb551620388fba8a91facc5fae54518ef8352df56baef",
           "Title": "e2fsprogs: out-of-bounds read/write via crafted filesystem",
           "Description": "An out-of-bounds read/write vulnerability was found in e2fsprogs 1.46.5. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem.",
           "Severity": "HIGH",
@@ -7844,7 +7841,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:25396a0b98f458f7674b288d1e3a23267a07f66f46a41d33c16c0df8ba298fa0",
+          "Fingerprint": "sha256:0c95c573a4161441c627c2a327a21d0799f2ef270e90679734ba058b9dd7b476",
           "Title": "sqlite: heap out-of-bound read in function rtreenode()",
           "Description": "SQLite3 from 3.6.0 to and including 3.27.2 is vulnerable to heap out-of-bound read in the rtreenode() function when handling invalid rtree tables.",
           "Severity": "CRITICAL",
@@ -7921,7 +7918,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6dd8d70752a14a72e3f9f01bd45c03f24aecec0db9a5fd73b254248f6afc8bd2",
+          "Fingerprint": "sha256:c1645c17c243d1cbae6a83b902e4ac8b71cf4a4024cb6b9226ee4ceca43f7fa0",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -7978,7 +7975,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9eba3881572233620b1d1a4dc41784c88dc80caf42250a5f3092b9add15245a4",
+          "Fingerprint": "sha256:a65e4dae0aefd115e3e69f8422f4d454c0c9b01fa479336edf40988035fb92d7",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
@@ -8040,7 +8037,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6f70ddae5f755398e7ebc57fad87823ea66cc9900f0396c068241d0b65f42a34",
+          "Fingerprint": "sha256:878b79cf2c9756cd2ed4e2bf107c08ac15ed105bbd68e758771913abb8367484",
           "Title": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
           "Description": "stack_protect_prologue in cfgexpand.c and stack_protect_epilogue in function.c in GNU Compiler Collection (GCC) 4.1 through 8 (under certain circumstances) generate instruction sequences when targeting ARM targets that spill the address of the stack protector guard, which allows an attacker to bypass the protection of -fstack-protector, -fstack-protector-all, -fstack-protector-strong, and -fstack-protector-explicit against stack overflow by controlling what the stack canary is compared against.",
           "Severity": "HIGH",
@@ -8096,7 +8093,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:cc4c4c33d43012de2b5d5b1a244bd2228ee6313d6830659e2e5a64cf9bd88451",
+          "Fingerprint": "sha256:40437a45333629ec456f8695c7079235eb4d9f74b7839ce12964d7b4bcc1ce79",
           "Title": "libgcrypt: mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm",
           "Description": "Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP.",
           "Severity": "HIGH",
@@ -8179,7 +8176,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:169e2d5be6973fd497ac4d626b2ac884b15fb2c9fd2cd37850889f5ddaa1c773",
+          "Fingerprint": "sha256:68f1af0179c377a127e80dbf1c1a9825f8a53b823bb6458aa51733b989a229fc",
           "Title": "libgcrypt: ECDSA timing attack allowing private key leak",
           "Description": "It was discovered that there was a ECDSA timing attack in the libgcrypt20 cryptographic library. Version affected: 1.8.4-5, 1.7.6-2+deb9u3, and 1.6.3-2+deb8u4. Versions fixed: 1.8.5-2 and 1.6.3-2+deb8u7.",
           "Severity": "MEDIUM",
@@ -8260,7 +8257,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:50f7081d3c09dd584e3c27a3fd8322403666d44d2e9209ec99593ac72c7338b3",
+          "Fingerprint": "sha256:90941c02a655ecfd3fdb399e39699d6e90db788f31e35db6da3b5c5f235f4f7a",
           "Title": "lz4: heap-based buffer overflow in LZ4_write32",
           "Description": "LZ4 before 1.9.2 has a heap-based buffer overflow in LZ4_write32 (related to LZ4_compress_destSize), affecting applications that call LZ4_compress_fast with a large input. (This issue can also lead to data corruption.) NOTE: the vendor states \"only a few specific / uncommon usages of the API are at risk.\"",
           "Severity": "LOW",
@@ -8322,7 +8319,7 @@
             "https://www.oracle.com/security-alerts/cpuoct2020.html"
           ],
           "PublishedDate": "2019-10-14T02:15:10.873Z",
-          "LastModifiedDate": "2026-06-17T02:24:06.95Z"
+          "LastModifiedDate": "2026-10-08T22:16:51.503Z"
         },
         {
           "VulnerabilityID": "CVE-2016-2779",
@@ -8345,7 +8342,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:47923701a5d6d4dae05ff69689b0cc1f783cefac71f77d3dfdb6d9a8218aff03",
+          "Fingerprint": "sha256:71ab93bd7140c1e407908b78a9f99873c868629bb09819513e746055506f1645",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -8402,7 +8399,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:51c6d1669267b40b7979ad64714ae1394f6f79bf30feccbabfac31c882351429",
+          "Fingerprint": "sha256:5707a996ea7b20a28ee4c998b706a5f06a196057a56cb8ecabb825e6def06901",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
@@ -8464,7 +8461,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f372fbb2b0dc36f3bc6b3584b6d58fc3add2b1620708a8981d09002b4fcfa384",
+          "Fingerprint": "sha256:df7d2b32a0cc6c5dfe299f0b0c304fde1b0f353600e19700958d86925deba22b",
           "Title": "ncurses: segfaulting OOB read",
           "Description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
           "Severity": "HIGH",
@@ -8543,7 +8540,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e3b91ed0bb4fca963144a3828e35a6558e4e33e34f9e8859109eaddec17feae2",
+          "Fingerprint": "sha256:5c452bcd4eadd516cd08df47f8e68411dac94c8293a383087fcde3691a5bb031",
           "Title": "ncurses: Null pointer dereference at function _nc_parse_entry in parse_entry.c",
           "Description": "In ncurses 6.1, there is a NULL pointer dereference at function _nc_parse_entry in parse_entry.c that will lead to a denial of service attack. The product proceeds to the dereference code path even after a \"dubious character `*' in name or alias field\" detection.",
           "Severity": "LOW",
@@ -8604,7 +8601,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:0afe4f483fa90d1201b975dc600efbcbe14de6ef1dced3b4d9688fc642ce14c2",
+          "Fingerprint": "sha256:9e12bc6e8076047968778db6986dbded3c0402c8e8b0f292d48505c2c8c2411c",
           "Title": "ncurses: heap-based buffer overflow in the _nc_find_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the _nc_find_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -8683,7 +8680,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1386d6b156cae283a88de68afd38528a0d9259d52f534c0dfabf2c18fd113466",
+          "Fingerprint": "sha256:a319b0b8a3c9d451d312d15d532641952afd115251e9f487fa4ba2b292c47269",
           "Title": "ncurses: heap-based buffer overflow in the fmt_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the fmt_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -8762,7 +8759,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2660323682945889272f6ffd0a3b9ca4ac83fe518be7f85b792722d0f9ec91bf",
+          "Fingerprint": "sha256:758ed6bab8b3dfcc6c9699d247182569cfc652cc543743a2b90a0e30273d305f",
           "Title": "pcre: Integer overflow when parsing callout numeric arguments",
           "Description": "libpcre in PCRE before 8.44 allows an integer overflow via a large number after a (?C substring.",
           "Severity": "MEDIUM",
@@ -8826,7 +8823,7 @@
             "https://www.pcre.org/original/changelog.txt"
           ],
           "PublishedDate": "2020-06-15T17:15:10.777Z",
-          "LastModifiedDate": "2026-06-17T02:54:18.38Z"
+          "LastModifiedDate": "2026-10-08T21:17:23.37Z"
         },
         {
           "VulnerabilityID": "CVE-2021-36084",
@@ -8849,7 +8846,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c5ea38529242801d4b18af2310db2b5304276850873b8ef5de35b72741af47df",
+          "Fingerprint": "sha256:5b4025d8bf4305c37fb0d2d6c3fb77198869f6ab45cfb7451529906ed3489e1d",
           "Title": "libsepol: use-after-free in __cil_verify_classperms()",
           "Description": "The CIL compiler in SELinux 3.2 has a use-after-free in __cil_verify_classperms (called from __cil_verify_classpermission and __cil_pre_verify_helper).",
           "Severity": "LOW",
@@ -8926,7 +8923,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f2e66126c1da7f293ea98f280a6b54241cedbd9645670bffdb4d9f08e9dce4ad",
+          "Fingerprint": "sha256:10a18c46c060f4353149a1fa4745b75c60afe3db49c0da930b930ea50de84344",
           "Title": "libsepol: use-after-free in __cil_verify_classperms()",
           "Description": "The CIL compiler in SELinux 3.2 has a use-after-free in __cil_verify_classperms (called from __verify_map_perm_classperms and hashtab_map).",
           "Severity": "LOW",
@@ -9003,7 +9000,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f13dad6afd0d6cd62bcc5cdbb77f81faac67cc42e2f57931a7e4b25601abca0c",
+          "Fingerprint": "sha256:401d09931a2f670f9bb07dd6303a8c7a4a223dde9e362669f8b0d5160d71ccac",
           "Title": "libsepol: use-after-free in cil_reset_classpermission()",
           "Description": "The CIL compiler in SELinux 3.2 has a use-after-free in cil_reset_classpermission (called from cil_reset_classperms_set and cil_reset_classperms_list).",
           "Severity": "LOW",
@@ -9080,7 +9077,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ccc18a101f6d03eb806000a8797f90c1ce2c01fd5794d425bf89f40fa3e060b8",
+          "Fingerprint": "sha256:cd551809748065187858f6fc9d51875bf356738c1b7291006385360764358d3d",
           "Title": "libsepol: heap-based buffer overflow in ebitmap_match_any()",
           "Description": "The CIL compiler in SELinux 3.2 has a heap-based buffer over-read in ebitmap_match_any (called indirectly from cil_check_neverallow). This occurs because there is sometimes a lack of checks for invalid statements in an optional block.",
           "Severity": "LOW",
@@ -9157,7 +9154,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:5d117b0f7139d4741ede994670414f699dd9dbe27a9875decd8da6196825565a",
+          "Fingerprint": "sha256:1302df3da544d1d15470b4046409530a3973e8f3c9a02c62c881977c03c2facf",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -9214,7 +9211,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:22924bce0a0096438914bef3fb30e250e5fc4296dc9fca418e40219c5100ed78",
+          "Fingerprint": "sha256:7babc36685e793ef1f940d776c56de5ec3750fa8a60ade210684ab90cb2504f3",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
@@ -9276,7 +9273,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:b6a75901f473a043b41bf53670914c2daed0bac6a1f2a8bc051154a57ab27bd9",
+          "Fingerprint": "sha256:d7cf11ad536a4dea1aeb87aee25283bf4a3699af15c41128d01a215b21750296",
           "Title": "e2fsprogs: out-of-bounds read/write via crafted filesystem",
           "Description": "An out-of-bounds read/write vulnerability was found in e2fsprogs 1.46.5. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem.",
           "Severity": "HIGH",
@@ -9352,7 +9349,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ae6e37176f368eb45955c8e14b8169575f1672acf375a17bfee887a60db62504",
+          "Fingerprint": "sha256:39ca864a265762248db6467a83e4c22c3ea10e9ca37033fa665e144a92790739",
           "Title": "gcc: spilling of stack protection address in cfgexpand.c and function.c leads to stack-overflow protection bypass",
           "Description": "stack_protect_prologue in cfgexpand.c and stack_protect_epilogue in function.c in GNU Compiler Collection (GCC) 4.1 through 8 (under certain circumstances) generate instruction sequences when targeting ARM targets that spill the address of the stack protector guard, which allows an attacker to bypass the protection of -fstack-protector, -fstack-protector-all, -fstack-protector-strong, and -fstack-protector-explicit against stack overflow by controlling what the stack canary is compared against.",
           "Severity": "HIGH",
@@ -9408,7 +9405,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6173ba6a8e6e25f4567b204e1988ae50ba55c755f25568b93f58c22c5a009600",
+          "Fingerprint": "sha256:cc3456199239704666e4e45bf85ea5a2cfa93005aaaf4da03d65ee0e4b5511c5",
           "Title": "systemd: services with DynamicUser can create SUID/SGID binaries",
           "Description": "It was discovered that a systemd service that uses DynamicUser property can create a SUID/SGID binary that would be allowed to run as the transient service UID/GID even after the service is terminated. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the UID/GID will be recycled.",
           "Severity": "HIGH",
@@ -9476,7 +9473,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3f7d1f8dfd9c40258c55d0c1ef01921f86ad1a97a3dc37f6cfd1b8e5e27aafc1",
+          "Fingerprint": "sha256:a51c3dc29291c2336e5d4a7d50b65604fe1166ef5fdebec90b7cb99797467c67",
           "Title": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
           "Description": "It was discovered that a systemd service that uses DynamicUser property can get new privileges through the execution of SUID binaries, which would allow to create binaries owned by the service transient group with the setgid bit set. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the GID will be recycled.",
           "Severity": "HIGH",
@@ -9545,7 +9542,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:85b128f3547cd11c6cd0af0b06403d2bfe04fc1029afb8c404bd72a8451d602b",
+          "Fingerprint": "sha256:5e0a3f7544aa9996336fc6cfb6fc35d3ab5f9ba8791ec2b8f1c2080b0880bb56",
           "Title": "systemd: use-after-free when asynchronous polkit queries are performed",
           "Description": "A heap use-after-free vulnerability was found in systemd before version v245-rc1, where asynchronous Polkit queries are performed while handling dbus messages. A local unprivileged attacker can abuse this flaw to crash systemd services or potentially execute code and elevate their privileges, by sending specially crafted dbus messages.",
           "Severity": "HIGH",
@@ -9612,7 +9609,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3752d41b8768f490a79d2972c87428ce07c15be663e7075479fd6023cfb30cfa",
+          "Fingerprint": "sha256:b046ab53965526aeeee43ffbcf4adba524a65d11d39ad4cf1d16eaa5a84d77e3",
           "Title": "systemd: Uncontrolled recursion in systemd-tmpfiles when removing files",
           "Description": "A flaw was found in systemd. An uncontrolled recursion in systemd-tmpfiles may lead to a denial of service at boot time when too many nested directories are created in /tmp.",
           "Severity": "MEDIUM",
@@ -9671,7 +9668,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:4c9f8f13bc2d344078da99bfbb2f8402e3b72699906bc972b6a4666acc530957",
+          "Fingerprint": "sha256:36702752b8f95b9f2541e65ee2dd45a31afd6694c5f4291fd877f6086127eedc",
           "Title": "systemd: kills privileged process if unprivileged PIDFile was tampered",
           "Description": "It was discovered systemd does not correctly check the content of PIDFile files before using it to kill processes. When a service is run from an unprivileged user (e.g. User field set in the service file), a local attacker who is able to write to the PIDFile of the mentioned service may use this flaw to trick systemd into killing other services and/or privileged processes. Versions before v237 are vulnerable.",
           "Severity": "LOW",
@@ -9735,7 +9732,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:5fd05c1b9d3a1ed88bc4fc3abe2ee897e8791a0cbdfb8f87c56e587634f9ccc8",
+          "Fingerprint": "sha256:f5bde1739e6c54756435ca8c31e79a13c38a4b6cf97eb8aa25a1afe1cce667dd",
           "Title": "systemd: Mishandled symlinks in systemd-tmpfiles allows local users to obtain ownership of arbitrary files",
           "Description": "systemd-tmpfiles in systemd through 237 mishandles symlinks present in non-terminal path components, which allows local users to obtain ownership of arbitrary files via vectors involving creation of a directory and a file under that directory, and later replacing that directory with a symlink. This occurs even if the fs.protected_symlinks sysctl is turned on.",
           "Severity": "LOW",
@@ -9798,7 +9795,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:dbe06478d4f6244154c948221969192bc26c9c94df1896cbac2cd8a12e379b45",
+          "Fingerprint": "sha256:e8c8d0277dcf99847a7f9ddf3c4a2d53218cbbe7d56f1efef21bbf940b81dbca",
           "Title": "ncurses: segfaulting OOB read",
           "Description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
           "Severity": "HIGH",
@@ -9877,7 +9874,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:4ff842104da81c563b203e8d6649376595459e069683fe0b235d8ca57394b1e1",
+          "Fingerprint": "sha256:4b7c67c4c3b5fd0921dba874967d914b01f15ccee02e328712ab88785d4f8210",
           "Title": "ncurses: Null pointer dereference at function _nc_parse_entry in parse_entry.c",
           "Description": "In ncurses 6.1, there is a NULL pointer dereference at function _nc_parse_entry in parse_entry.c that will lead to a denial of service attack. The product proceeds to the dereference code path even after a \"dubious character `*' in name or alias field\" detection.",
           "Severity": "LOW",
@@ -9938,7 +9935,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:5269da9891ac3dae39105969a1b4744924ae0faafa5fcf82e63404b4e5fc04d9",
+          "Fingerprint": "sha256:a43d38d9149115a6950697a2ca588e9d5aa7ae49e3a1d1dac46ba9bd14db52f1",
           "Title": "ncurses: heap-based buffer overflow in the _nc_find_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the _nc_find_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -10017,7 +10014,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c10220c1a6f40fe7fead40c1aaabc02019c831619bd1a2c8ca20c310765e7b34",
+          "Fingerprint": "sha256:4bec7fd4b4e78887ed9f417aad1d4c0560358652e0b5c5977c44dcecd2129687",
           "Title": "ncurses: heap-based buffer overflow in the fmt_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the fmt_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -10096,7 +10093,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:d97d1ea6cf886907e7cf9cb6e4cf6e2328a46aa376541aebdb92476f7a866269",
+          "Fingerprint": "sha256:c9237ebd539dccb15016ccf659c0649167331f3ed0088e597eedd2903395ad1a",
           "Title": "systemd: services with DynamicUser can create SUID/SGID binaries",
           "Description": "It was discovered that a systemd service that uses DynamicUser property can create a SUID/SGID binary that would be allowed to run as the transient service UID/GID even after the service is terminated. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the UID/GID will be recycled.",
           "Severity": "HIGH",
@@ -10164,7 +10161,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:d0cb101c2545355b68629dde0cc2560430ca92e5a2f4deeddc432a49ae359a16",
+          "Fingerprint": "sha256:fc760b1eac0f570e39d00e534f980fdff7c518575e0e463badb1b6cc18fde049",
           "Title": "systemd: services with DynamicUser can get new privileges and create SGID binaries",
           "Description": "It was discovered that a systemd service that uses DynamicUser property can get new privileges through the execution of SUID binaries, which would allow to create binaries owned by the service transient group with the setgid bit set. A local attacker may use this flaw to access resources that will be owned by a potentially different service in the future, when the GID will be recycled.",
           "Severity": "HIGH",
@@ -10233,7 +10230,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:35092c0b372f2bd131310b064ae159ae2403766b09b82947bcf3f620ebe0810a",
+          "Fingerprint": "sha256:f738966261562f102d33045e682bdc55791630febffc27f05a958106d2801502",
           "Title": "systemd: use-after-free when asynchronous polkit queries are performed",
           "Description": "A heap use-after-free vulnerability was found in systemd before version v245-rc1, where asynchronous Polkit queries are performed while handling dbus messages. A local unprivileged attacker can abuse this flaw to crash systemd services or potentially execute code and elevate their privileges, by sending specially crafted dbus messages.",
           "Severity": "HIGH",
@@ -10300,7 +10297,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6719d2ebf50edc2524bd0ecbf2cb19c94bd42109cb5bd52fb962a0cb33550028",
+          "Fingerprint": "sha256:d1fa81ea09c44f94b91cdd18326d7da81568448f1fe8a72700dab555dc17039b",
           "Title": "systemd: Uncontrolled recursion in systemd-tmpfiles when removing files",
           "Description": "A flaw was found in systemd. An uncontrolled recursion in systemd-tmpfiles may lead to a denial of service at boot time when too many nested directories are created in /tmp.",
           "Severity": "MEDIUM",
@@ -10359,7 +10356,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:5f67a6d48f44d2dfce28e479f30d62842e36a01becc64f7b8e5380b3c0aec7f6",
+          "Fingerprint": "sha256:6687042624abb9ae77fc3153422ef96250fba6393ab13735fd82bb2b1b6414ff",
           "Title": "systemd: kills privileged process if unprivileged PIDFile was tampered",
           "Description": "It was discovered systemd does not correctly check the content of PIDFile files before using it to kill processes. When a service is run from an unprivileged user (e.g. User field set in the service file), a local attacker who is able to write to the PIDFile of the mentioned service may use this flaw to trick systemd into killing other services and/or privileged processes. Versions before v237 are vulnerable.",
           "Severity": "LOW",
@@ -10423,7 +10420,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6c4eca288aaca8492daba4cde2aff269aebed216aeafd1562f6027365f17db8d",
+          "Fingerprint": "sha256:f2a83dfc77e444aa1818fd1a80ba512d6dc0d1d589c741dfb9e37ba538d2a2be",
           "Title": "systemd: Mishandled symlinks in systemd-tmpfiles allows local users to obtain ownership of arbitrary files",
           "Description": "systemd-tmpfiles in systemd through 237 mishandles symlinks present in non-terminal path components, which allows local users to obtain ownership of arbitrary files via vectors involving creation of a directory and a file under that directory, and later replacing that directory with a symlink. This occurs even if the fs.protected_symlinks sysctl is turned on.",
           "Severity": "LOW",
@@ -10486,7 +10483,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f8e0cfd4073608bcf3d21f35bf723b13923240378118acb6f327afa54f53fecd",
+          "Fingerprint": "sha256:0321db844cadac36282bde57cde5b71eb1617534cef3094f29290ac0bf87ae8c",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -10543,7 +10540,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:05deec47319ed67338622fba57dd3bdda2e1eed9b98d8408b5e0b7eecee3569f",
+          "Fingerprint": "sha256:1afd01ec42d65a93a5b92732b9b27169ffc3d5b8eb238bd64911775cdf056e90",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
@@ -10605,7 +10602,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:0ecba6c88a4670eea939c19ab86feadd5ad9f6588ec221740260d944f7ea0485",
+          "Fingerprint": "sha256:a9d1923c219102514bcd5353c4e8ebea49a41596fc0d0f3c77d3c023b7397d7f",
           "Title": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
           "Description": "An issue was discovered in shadow 4.5. newgidmap (in shadow-utils) is setuid and allows an unprivileged user to be placed in a user namespace where setgroups(2) is permitted. This allows an attacker to remove themselves from a supplementary group, which may allow access to certain filesystem paths if the administrator has used \"group blacklisting\" (e.g., chmod g-rwx) to restrict access to paths. This flaw effectively reverts a security feature in the kernel (in particular, the /proc/self/setgroups knob) to prevent this sort of privilege escalation.",
           "Severity": "LOW",
@@ -10664,7 +10661,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:7889942df73cebea465dfea81bd2066fd5f316a184dfbe0a5dc21a4b1365ab71",
+          "Fingerprint": "sha256:2b862b2b75ac5665c34bb770e4b1a1b2e44663ee27e7cb469fe4879541280ed7",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -10721,7 +10718,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:4b6011357229d064e3455157df0739fb7a0e218d656dd2cca79bc21df7d2e74c",
+          "Fingerprint": "sha256:81a34055c00d52c8e8a09f7c48d45422adb05c8177c64eda3173900eac4b5553",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
@@ -10783,7 +10780,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:898809913fc95364d0ea8a2368d25e9d216182c5a2608fe106dcf2337cc8e25e",
+          "Fingerprint": "sha256:df5381c703e1897ea0f5c22b9b6a25afc4e1eaab470493ae40fa4ecc920da1b5",
           "Title": "ncurses: segfaulting OOB read",
           "Description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
           "Severity": "HIGH",
@@ -10862,7 +10859,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:22ed852911caa97284fc44ea93490e1df608e5f0db3b1e2865b47d5f8ceb67d9",
+          "Fingerprint": "sha256:aa3bd41e6d955e50c5d4da3160637f4ad4c943dd2b58832b59203692767280b8",
           "Title": "ncurses: Null pointer dereference at function _nc_parse_entry in parse_entry.c",
           "Description": "In ncurses 6.1, there is a NULL pointer dereference at function _nc_parse_entry in parse_entry.c that will lead to a denial of service attack. The product proceeds to the dereference code path even after a \"dubious character `*' in name or alias field\" detection.",
           "Severity": "LOW",
@@ -10923,7 +10920,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:139faa3ff66640b5268a9d3744502975fea0382abb53723ba041e682af49d53a",
+          "Fingerprint": "sha256:bd2d8c630ff28e874e0327f30e03c28f3073c4290476ac7fcde5dfe990660c1f",
           "Title": "ncurses: heap-based buffer overflow in the _nc_find_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the _nc_find_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -11002,7 +10999,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:87349c0f2f9212bd2d10c053f1490e19708c6cc74e7cf814703e11a0ffaee9bb",
+          "Fingerprint": "sha256:40f90cffa4019be2b24748e7ef37ff796355499839c22d0c3614a5c9a0c3396d",
           "Title": "ncurses: heap-based buffer overflow in the fmt_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the fmt_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -11081,7 +11078,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c9397c902d82a629633d747f17098050d80d8569b4843457f14dc9ef9405f173",
+          "Fingerprint": "sha256:437f16a0b84238074c2c789c992e732bf64997ab9f1671cadd60a40c867a70fb",
           "Title": "ncurses: segfaulting OOB read",
           "Description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
           "Severity": "HIGH",
@@ -11160,7 +11157,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9daf57e7beaf08085d0f5380b4df75795f9601d720e483051efaf4130380dacd",
+          "Fingerprint": "sha256:7dc7f46d1a951f284c0b05629bda3dc3172f4fecbc0a06601e7912124cab9505",
           "Title": "ncurses: Null pointer dereference at function _nc_parse_entry in parse_entry.c",
           "Description": "In ncurses 6.1, there is a NULL pointer dereference at function _nc_parse_entry in parse_entry.c that will lead to a denial of service attack. The product proceeds to the dereference code path even after a \"dubious character `*' in name or alias field\" detection.",
           "Severity": "LOW",
@@ -11221,7 +11218,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ed65ba0d23017d5879cec871aeda93168d7755a551a004aff53142246c0d0c98",
+          "Fingerprint": "sha256:10196c811e87d971f8c43081f3c3fbf4ee4307761c3acba4a62e47c6e6e4cd77",
           "Title": "ncurses: heap-based buffer overflow in the _nc_find_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the _nc_find_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -11300,7 +11297,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f523e2a7ad785a233298b9d9e495b2825d46ae3935cb11489aedf6ffc721489c",
+          "Fingerprint": "sha256:bc38a40383aa2a1e0a5ed65cc6b3ee48482c933402eb654786b7ef4b4cb75154",
           "Title": "ncurses: heap-based buffer overflow in the fmt_entry function in tinfo/comp_hash.c",
           "Description": "There is a heap-based buffer over-read in the fmt_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
           "Severity": "LOW",
@@ -11379,7 +11376,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1dfd47dd61636a250f8efe1270c9da71a73e2e389ea1a988704941b319b0ca9b",
+          "Fingerprint": "sha256:bfb19234451c033c333b5a2516f44c7e21ae8948e34fefddb47fc4867d78a01d",
           "Title": "shadow-utils: newgidmap allows unprivileged user to drop supplementary groups potentially allowing privilege escalation",
           "Description": "An issue was discovered in shadow 4.5. newgidmap (in shadow-utils) is setuid and allows an unprivileged user to be placed in a user namespace where setgroups(2) is permitted. This allows an attacker to remove themselves from a supplementary group, which may allow access to certain filesystem paths if the administrator has used \"group blacklisting\" (e.g., chmod g-rwx) to restrict access to paths. This flaw effectively reverts a security feature in the kernel (in particular, the /proc/self/setgroups knob) to prevent this sort of privilege escalation.",
           "Severity": "LOW",
@@ -11438,7 +11435,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f15cd48a618c22465d0a9b0b598a0f6c363c8e05c8709bd80d5412d642e2d5e7",
+          "Fingerprint": "sha256:bdb525ce20be04cc8b509ead34a1ed43ee1631cfead46286d0b80e3ded1df257",
           "Title": "perl-CPAN: Bypass of verification of signatures in CHECKSUMS files",
           "Description": "CPAN 2.28 allows Signature Verification Bypass.",
           "Severity": "HIGH",
@@ -11512,7 +11509,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:8b68873d7342b04810081e8778697972a247284d71cf05f6e55e271e9c09cc90",
+          "Fingerprint": "sha256:93dab71764022dd6efc35d40d294e6d7bb1a4de49d197dcaf4e4d64b3710a258",
           "Title": "util-linux: runuser tty hijack via TIOCSTI ioctl",
           "Description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
           "Severity": "HIGH",
@@ -11569,7 +11566,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:7916f2496e0bc8fdfceefff1d21a1a9eaa8933066600382c8e574de97829fb1e",
+          "Fingerprint": "sha256:22bf15a78243f0e8b973d0591e23e64e61ecc15097970eea4752854d85d7cdcb",
           "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
           "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
           "Severity": "LOW",
