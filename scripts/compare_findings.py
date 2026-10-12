@@ -2,22 +2,30 @@
 """
 compare_findings.py
 
-Loads Trivy's JSON report, Grype's JSON report, and a ground-truth file for
-one test image, then reports — for each ground-truth entry — whether each
-scanner found it, and whether severity/fix-status agree.
+Scores Trivy and Grype reports against a hand-verified ground-truth file for
+one test image.
 
-Ground-truth entries with "affected_status": "DISPUTED" are handled
-differently: for those, NOT reporting the CVE is the correct behavior, and
-reporting it is logged as a note toward precision rather than toward recall.
+Matching is alias-aware: a scanner finding matches a ground-truth entry when
+the finding's package is named in the entry AND the finding's ID (or any ID
+the scanner lists as related, e.g. Grype's GHSA -> CVE link) equals the
+entry's cve_id or one of its aliases.
+
+Entries with affected_status DISPUTED are reported separately: they count
+toward neither recall nor precision.
+
+Only findings on packages named in the key are examined. Findings on other
+packages (e.g. base-image OS packages) are out of scope for that key.
 
 Usage:
     python3 scripts/compare_findings.py \
-        --ground-truth ground-truth/os-package-cve.json \
-        --trivy scanners/reports/trivy-os-package-cve.json \
-        --grype scanners/reports/grype-os-package-cve.json
+        --ground-truth ground-truth/app-dependency-cve.json \
+        --trivy scanners/reports/trivy-app-dependency-cve.json \
+        --grype scanners/reports/grype-app-dependency-cve.json \
+        [--csv results/app-dependency-cve.csv]
 """
 
 import argparse
+import csv
 import json
 
 
@@ -26,126 +34,160 @@ def load_json(path):
         return json.load(f)
 
 
-def extract_trivy_findings(trivy_report):
+def extract_trivy_findings(report):
     findings = []
-    for result in trivy_report.get("Results", []) or []:
-        for vuln in result.get("Vulnerabilities", []) or []:
+    for result in report.get("Results") or []:
+        for v in result.get("Vulnerabilities") or []:
+            vid = v.get("VulnerabilityID")
             findings.append({
-                "cve_id": vuln.get("VulnerabilityID"),
-                "package": vuln.get("PkgName"),
-                "version": vuln.get("InstalledVersion"),
-                "severity": (vuln.get("Severity") or "").upper(),
-                "fixed_version": vuln.get("FixedVersion", ""),
+                "id": vid,
+                "ids": {vid},
+                "package": v.get("PkgName"),
+                "version": v.get("InstalledVersion"),
+                "severity": (v.get("Severity") or "").upper(),
             })
     return findings
 
 
-def extract_grype_findings(grype_report):
+def extract_grype_findings(report):
     findings = []
-    for match in grype_report.get("matches", []) or []:
-        vuln = match.get("vulnerability", {})
-        artifact = match.get("artifact", {})
-        fix = vuln.get("fix", {})
+    for m in report.get("matches") or []:
+        vuln = m.get("vulnerability", {})
+        art = m.get("artifact", {})
+        ids = {vuln.get("id")}
+        for rel in m.get("relatedVulnerabilities") or []:
+            ids.add(rel.get("id"))
         findings.append({
-            "cve_id": vuln.get("id"),
-            "package": artifact.get("name"),
-            "version": artifact.get("version"),
+            "id": vuln.get("id"),
+            "ids": ids,
+            "package": art.get("name"),
+            "version": art.get("version"),
             "severity": (vuln.get("severity") or "").upper(),
-            "fix_state": fix.get("state", ""),
         })
     return findings
 
 
-def check_entry_against_scanner(entry, scanner_findings):
-    cve_id = entry["cve_id"]
-    expected_packages = set(entry["packages"])
-    expected_severity = entry["reference_severity"]
+def wanted_ids(entry):
+    return {entry["cve_id"], *entry.get("aliases", [])}
 
-    matches = [
-        f for f in scanner_findings
-        if f["cve_id"] == cve_id and f["package"] in expected_packages
-    ]
 
-    if not matches:
+def check_entry(entry, findings):
+    pkgs = set(entry["packages"])
+    wanted = wanted_ids(entry)
+    hits = [f for f in findings if f["package"] in pkgs and f["ids"] & wanted]
+    if not hits:
         return {"caught": False}
-
-    packages_matched = sorted(set(m["package"] for m in matches))
-    severities_found = set(m["severity"] for m in matches)
-    severity_agrees = severities_found == {expected_severity}
-
+    sevs = {h["severity"] for h in hits}
     return {
         "caught": True,
-        "packages_matched": packages_matched,
-        "packages_missing": sorted(expected_packages - set(packages_matched)),
-        "severity_agrees": severity_agrees,
-        "severities_found": sorted(severities_found),
+        "packages_matched": sorted({h["package"] for h in hits}),
+        "packages_missing": sorted(pkgs - {h["package"] for h in hits}),
+        "severities": sorted(sevs),
+        "severity_agrees": sevs == {entry["reference_severity"]},
+        "reported_as": sorted({h["id"] for h in hits}),
     }
 
 
-def report_disputed_entry(entry, scanner_name, findings):
-    cve_id = entry["cve_id"]
-    expected_packages = set(entry["packages"])
-    reported = [
-        f for f in findings
-        if f["cve_id"] == cve_id and f["package"] in expected_packages
-    ]
-    if reported:
-        severities = sorted(set(r["severity"] for r in reported))
-        print(f"  {scanner_name:6s}: REPORTED a disputed CVE "
-              f"(severity labeled: {severities}) — arguably a "
-              f"precision ding under a strict scoring rule")
-    else:
-        print(f"  {scanner_name:6s}: CORRECTLY EXCLUDED the disputed CVE")
-
-
-def report_normal_entry(scanner_name, result):
-    if result["caught"]:
-        sev_note = "severity matches" if result["severity_agrees"] else f"severity MISMATCH ({result['severities_found']})"
-        missing = f", missing packages: {result['packages_missing']}" if result["packages_missing"] else ""
-        print(f"  {scanner_name:6s}: CAUGHT — {sev_note}{missing}")
-    else:
-        print(f"  {scanner_name:6s}: MISSED — not reported for any expected package")
+def count_unkeyed(entries, findings):
+    key_pkgs = {p for e in entries for p in e["packages"]}
+    n = 0
+    for f in findings:
+        if f["package"] not in key_pkgs:
+            continue
+        keyed = any(
+            f["package"] in e["packages"] and f["ids"] & wanted_ids(e)
+            for e in entries
+        )
+        if not keyed:
+            n += 1
+    return n
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--ground-truth", required=True)
-    parser.add_argument("--trivy", required=True)
-    parser.add_argument("--grype", required=True)
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--ground-truth", required=True)
+    ap.add_argument("--trivy", required=True)
+    ap.add_argument("--grype", required=True)
+    ap.add_argument("--csv", default=None)
+    args = ap.parse_args()
 
-    ground_truth = load_json(args.ground_truth)
-    trivy_findings = extract_trivy_findings(load_json(args.trivy))
-    grype_findings = extract_grype_findings(load_json(args.grype))
+    gt = load_json(args.ground_truth)
+    entries = gt["entries"]
+    scanners = [
+        ("Trivy", extract_trivy_findings(load_json(args.trivy))),
+        ("Grype", extract_grype_findings(load_json(args.grype))),
+    ]
 
-    print(f"Image: {ground_truth['image']}")
-    print(f"Ground-truth entries: {len(ground_truth['entries'])}")
-    print(f"Trivy raw findings loaded: {len(trivy_findings)}")
-    print(f"Grype raw findings loaded: {len(grype_findings)}")
+    print(f"Image: {gt['image']}")
+    print(f"Ground-truth entries: {len(entries)}")
+    for name, findings in scanners:
+        print(f"{name} raw findings loaded: {len(findings)}")
     print("-" * 70)
 
-    for entry in ground_truth["entries"]:
-        is_disputed = entry.get("affected_status") == "DISPUTED"
-        print(f"\nCVE: {entry['cve_id']}")
-        print(f"  Expected severity: {entry['reference_severity']}")
-        print(f"  Expected packages: {', '.join(entry['packages'])}")
-        if is_disputed:
-            print("  ** DISPUTED by upstream — not a confirmed real vulnerability **")
+    tally = {name: {"hit": 0, "total": 0, "sev_ok": 0, "disp_rep": 0, "disp_total": 0}
+             for name, _ in scanners}
+    rows = []
 
-        for scanner_name, findings in [("Trivy", trivy_findings), ("Grype", grype_findings)]:
-            if is_disputed:
-                report_disputed_entry(entry, scanner_name, findings)
+    for entry in entries:
+        disputed = entry.get("affected_status") == "DISPUTED"
+        print(f"\nCVE: {entry['cve_id']}")
+        print(f"  Reference severity (NVD-based): {entry['reference_severity']}")
+        print(f"  Expected packages: {', '.join(entry['packages'])}")
+        if disputed:
+            print("  ** DISPUTED: counted separately, not in recall or precision **")
+
+        for name, findings in scanners:
+            r = check_entry(entry, findings)
+            t = tally[name]
+            if disputed:
+                t["disp_total"] += 1
+                if r["caught"]:
+                    t["disp_rep"] += 1
+                    print(f"  {name:6s}: REPORTED the disputed CVE "
+                          f"(native severity {r['severities']})")
+                else:
+                    print(f"  {name:6s}: did not report the disputed CVE")
             else:
-                result = check_entry_against_scanner(entry, findings)
-                report_normal_entry(scanner_name, result)
+                t["total"] += 1
+                if r["caught"]:
+                    t["hit"] += 1
+                    if r["severity_agrees"]:
+                        t["sev_ok"] += 1
+                    sev = ("severity matches" if r["severity_agrees"]
+                           else f"severity differs, native {r['severities']}")
+                    missing = (f", missing packages: {r['packages_missing']}"
+                               if r["packages_missing"] else "")
+                    print(f"  {name:6s}: CAUGHT as {r['reported_as']} — {sev}{missing}")
+                else:
+                    print(f"  {name:6s}: MISSED — not reported for any expected package")
+            rows.append({
+                "image": gt["image"],
+                "cve_id": entry["cve_id"],
+                "affected_status": entry.get("affected_status"),
+                "scanner": name,
+                "caught": r["caught"],
+                "reported_as": ";".join(r.get("reported_as", [])),
+                "native_severity": ";".join(r.get("severities", [])),
+                "reference_severity": entry["reference_severity"],
+                "severity_agrees": r.get("severity_agrees", ""),
+            })
 
     print("\n" + "-" * 70)
-    print("NOTE: non-disputed entries measure recall against verified ground")
-    print("truth. Disputed entries measure something different: whether each")
-    print("scanner includes CVEs that upstream maintainers say are not real")
-    print("vulnerabilities. Full precision (false positives among ALL scanner")
-    print("findings, not just the ones we've checked) still requires growing")
-    print("ground truth further.")
+    print("SUMMARY (recall on non-disputed entries of the verified key)")
+    for name, findings in scanners:
+        t = tally[name]
+        print(f"  {name}: caught {t['hit']}/{t['total']}, "
+              f"severity matched on {t['sev_ok']} of {t['hit']} caught; "
+              f"disputed reported {t['disp_rep']}/{t['disp_total']}; "
+              f"other findings on key packages not in key: "
+              f"{count_unkeyed(entries, findings)}")
+
+    if args.csv:
+        with open(args.csv, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+            w.writeheader()
+            w.writerows(rows)
+        print(f"\nWrote {args.csv}")
 
 
 if __name__ == "__main__":
