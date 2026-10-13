@@ -142,6 +142,26 @@ scanner output and comparison results, not in this file.
   the NVD score alone (CRITICAL) would. The finding stays in the report
   either way, per the "below-threshold findings retained" rule.
 
+## Entry 6
+
+- Package: libsystemd0, libudev1 (source package systemd)
+- Ecosystem: deb (Debian package)
+- Installed version: 232-25+deb9u13
+- Vulnerability ID: CVE-2020-1712
+- Affected status: AFFECTED
+- Reference severity: HIGH (NVD CVSS 3.1 base score 7.8, nvd@nist.gov primary,
+  checked 2026-10-13). Both scanners also report HIGH.
+- Fix status: FIX EXISTS. Debian's tracker lists stretch as fixed in systemd
+  232-25+deb9u14 (DLA-3063-1); the installed version is one revision behind.
+  Whether that update is installable from this image's configured apt sources
+  was not tested.
+- Source checked: https://security-tracker.debian.org/tracker/CVE-2020-1712
+- Date reviewed: 2026-10-13
+- Notes: Found through the gate experiment: the only HIGH/CRITICAL findings
+  with a fix available (the P3 blockers) on this image, identical in Trivy and
+  Grype. Seeded from scanner output, then verified independently. Both tools
+  caught it.
+
 ## Entries pending (not verified, do not treat as confirmed)
 
 - CVE-2016-2779 (util-linux), surfaced by the first Trivy scan
