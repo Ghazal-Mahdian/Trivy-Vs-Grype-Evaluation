@@ -1,0 +1,280 @@
+{
+  "image": "backport-fix-cve",
+  "base_image": "debian:bookworm-slim",
+  "base_digest": "debian:bookworm-slim@sha256:7c7b2c966bc9ee8cedfeef67e0e279108992c77681fa595db4a9d65c06ccc587",
+  "platform": "linux/amd64",
+  "scope": "urllib3 / python3-urllib3 only. Other packages in the image are OUT OF SCOPE for this key.",
+  "severity_reference": "NVD primary CVSS base severity (nvd@nist.gov); scanner-native severities are not stored here",
+  "key_built_before_scanning": true,
+  "nvd_checked": "2026-10-14",
+  "debian_tracker_snapshot": "2026-10-14T13:08Z",
+  "upstream_advisories_source": "OSV query PyPI urllib3 1.26.12, 2026-10-14",
+  "status_meanings": {
+    "AFFECTED": "scanner SHOULD report it (counts toward recall)",
+    "FIXED_BY_BACKPORT": "scanner should NOT report it (reporting = false positive)",
+    "DISPUTED": "counted separately"
+  },
+  "entries": [
+    {
+      "cve_id": "CVE-2023-43804",
+      "aliases": [
+        "GHSA-v845-jxx5-vc9f",
+        "PYSEC-2023-192"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 8.1,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "FIXED BY DEBIAN BACKPORT in 1.26.12-1+deb12u1; installed 1.26.12-1+deb12u4 is at or above it. Upstream-version matching would wrongly report it. Reporting this CVE is a FALSE POSITIVE.",
+      "debian_fixed_version": "1.26.12-1+deb12u1",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2023-45803",
+      "aliases": [
+        "GHSA-g4mx-q9vg-27p4",
+        "PYSEC-2023-212"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 4.2,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "FIXED BY DEBIAN BACKPORT in 1.26.12-1+deb12u1; installed 1.26.12-1+deb12u4 is at or above it. Upstream-version matching would wrongly report it. Reporting this CVE is a FALSE POSITIVE.",
+      "debian_fixed_version": "1.26.12-1+deb12u1",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2024-37891",
+      "aliases": [
+        "GHSA-34jh-p97f-mpxf",
+        "PYSEC-2026-1995"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 6.5,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "FIXED BY DEBIAN BACKPORT in 1.26.12-1+deb12u1; installed 1.26.12-1+deb12u4 is at or above it. Upstream-version matching would wrongly report it. Reporting this CVE is a FALSE POSITIVE.",
+      "debian_fixed_version": "1.26.12-1+deb12u1",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2025-50181",
+      "aliases": [
+        "GHSA-pq67-6m6q-mj2v",
+        "PYSEC-2026-1999"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 6.1,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "FIXED BY DEBIAN BACKPORT in 1.26.12-1+deb12u2; installed 1.26.12-1+deb12u4 is at or above it. Upstream-version matching would wrongly report it. Reporting this CVE is a FALSE POSITIVE.",
+      "debian_fixed_version": "1.26.12-1+deb12u2",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2025-66418",
+      "aliases": [
+        "GHSA-gm62-xv2j-4w53",
+        "PYSEC-2026-1998"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "FIXED BY DEBIAN BACKPORT in 1.26.12-1+deb12u2; installed 1.26.12-1+deb12u4 is at or above it. Upstream-version matching would wrongly report it. Reporting this CVE is a FALSE POSITIVE.",
+      "debian_fixed_version": "1.26.12-1+deb12u2",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2026-21441",
+      "aliases": [
+        "GHSA-38jv-5279-wg99",
+        "PYSEC-2026-1996"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "FIXED BY DEBIAN BACKPORT in 1.26.12-1+deb12u3; installed 1.26.12-1+deb12u4 is at or above it. Upstream-version matching would wrongly report it. Reporting this CVE is a FALSE POSITIVE.",
+      "debian_fixed_version": "1.26.12-1+deb12u3",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2026-44431",
+      "aliases": [
+        "GHSA-qccp-gfcp-xxvc",
+        "PYSEC-2026-141"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 5.3,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "FIXED BY DEBIAN BACKPORT in 1.26.12-1+deb12u4; installed 1.26.12-1+deb12u4 is at or above it. Upstream-version matching would wrongly report it. Reporting this CVE is a FALSE POSITIVE.",
+      "debian_fixed_version": "1.26.12-1+deb12u4",
+      "note": "GitHub CVSS 4.0 scores this 8.2 HIGH; NVD primary is 5.3 MEDIUM",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2025-66471",
+      "aliases": [
+        "GHSA-2xpw-w6gg-jr37",
+        "PYSEC-2026-1994"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "NOT FIXED in Debian bookworm (tracker status open, no fixed version)",
+      "note": "Debian: open, nodsa 'Intrusive to backport; requires update for src:brotli' (ignored)",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2026-97687",
+      "aliases": [
+        "GHSA-8988-9cw3-xx77",
+        "PYSEC-2026-4175"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 8.1,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "NOT FIXED in Debian bookworm (tracker status open, no fixed version)",
+      "note": "Debian: open, nodsa 'Minor issue' (postponed)",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    },
+    {
+      "cve_id": "CVE-2026-97689",
+      "aliases": [
+        "GHSA-vxq7-64xx-v4gw",
+        "PYSEC-2026-4177"
+      ],
+      "ecosystem": "PyPI",
+      "packages": [
+        "urllib3",
+        "python3-urllib3"
+      ],
+      "installed_version": "1.26.12-1+deb12u4",
+      "upstream_version": "1.26.12",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "NOT FIXED in Debian bookworm (tracker status open, no fixed version)",
+      "note": "Debian: open, nodsa 'Minor issue' (postponed)",
+      "source": "ground-truth/evidence/debian-tracker-python-urllib3.json",
+      "date_reviewed": "2026-10-14"
+    }
+  ]
+}

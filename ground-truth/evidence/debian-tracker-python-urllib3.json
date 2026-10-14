@@ -1,0 +1,120 @@
+{
+  "snapshot_utc": "2026-10-14T13:08Z",
+  "source": "https://security-tracker.debian.org/tracker/data/json",
+  "package": "python-urllib3",
+  "entries": {
+    "CVE-2023-43804": {
+      "bookworm": {
+        "status": "resolved",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "fixed_version": "1.26.12-1+deb12u1",
+        "urgency": "not yet assigned"
+      }
+    },
+    "CVE-2023-45803": {
+      "bookworm": {
+        "status": "resolved",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "fixed_version": "1.26.12-1+deb12u1",
+        "urgency": "not yet assigned"
+      }
+    },
+    "CVE-2024-37891": {
+      "bookworm": {
+        "status": "resolved",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "fixed_version": "1.26.12-1+deb12u1",
+        "urgency": "not yet assigned"
+      }
+    },
+    "CVE-2025-50181": {
+      "bookworm": {
+        "status": "resolved",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "fixed_version": "1.26.12-1+deb12u2",
+        "urgency": "not yet assigned"
+      }
+    },
+    "CVE-2025-66418": {
+      "bookworm": {
+        "status": "resolved",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "fixed_version": "1.26.12-1+deb12u2",
+        "urgency": "not yet assigned"
+      }
+    },
+    "CVE-2025-66471": {
+      "bookworm": {
+        "status": "open",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "urgency": "not yet assigned",
+        "nodsa": "Intrusive to backport; requires update for src:brotli for effective fix",
+        "nodsa_reason": "ignored"
+      }
+    },
+    "CVE-2026-21441": {
+      "bookworm": {
+        "status": "resolved",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "fixed_version": "1.26.12-1+deb12u3",
+        "urgency": "not yet assigned"
+      }
+    },
+    "CVE-2026-44431": {
+      "bookworm": {
+        "status": "resolved",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "fixed_version": "1.26.12-1+deb12u4",
+        "urgency": "not yet assigned"
+      }
+    },
+    "CVE-2026-97687": {
+      "bookworm": {
+        "status": "open",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "urgency": "not yet assigned",
+        "nodsa": "Minor issue",
+        "nodsa_reason": "postponed"
+      }
+    },
+    "CVE-2026-97689": {
+      "bookworm": {
+        "status": "open",
+        "repositories": {
+          "bookworm": "1.26.12-1+deb12u4",
+          "bookworm-security": "1.26.12-1+deb12u4"
+        },
+        "urgency": "not yet assigned",
+        "nodsa": "Minor issue",
+        "nodsa_reason": "postponed"
+      }
+    }
+  }
+}
