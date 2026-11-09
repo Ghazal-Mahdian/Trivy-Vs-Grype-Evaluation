@@ -6,7 +6,7 @@
   "ReportID": "01a12820-5dc3-7704-8f6b-98cff0152569",
   "CreatedAt": "2026-10-10T16:22:52.227461-07:00",
   "ArtifactID": "sha256:bb86ffd77e4607fabf3eb0d8186e33793e0db0f4384fbab6492a00c1ec53434f",
-  "ArtifactName": "/Users/ghazal/scan-artifacts/os-package-cve.tar",
+  "ArtifactName": "~/scan-artifacts/os-package-cve.tar",
   "ArtifactType": "container_image",
   "Metadata": {
     "Size": 58980864,
@@ -95,7 +95,7 @@
   },
   "Results": [
     {
-      "Target": "/Users/ghazal/scan-artifacts/os-package-cve.tar (debian 9.13)",
+      "Target": "~/scan-artifacts/os-package-cve.tar (debian 9.13)",
       "Class": "os-pkgs",
       "Type": "debian",
       "Packages": [

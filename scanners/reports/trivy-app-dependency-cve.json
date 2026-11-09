@@ -6,7 +6,7 @@
   "ReportID": "01a128d9-dafe-714c-bc16-68a65fc9c8a2",
   "CreatedAt": "2026-10-10T19:45:28.446086-07:00",
   "ArtifactID": "sha256:1cf3d0c26061cc4d0a0f724fd4f63a45aed63b578797dad35a9a1349d44e4668",
-  "ArtifactName": "/Users/ghazal/scan-artifacts/app-dependency-cve.tar",
+  "ArtifactName": "~/scan-artifacts/app-dependency-cve.tar",
   "ArtifactType": "container_image",
   "Metadata": {
     "Size": 132576768,
@@ -166,7 +166,7 @@
   },
   "Results": [
     {
-      "Target": "/Users/ghazal/scan-artifacts/app-dependency-cve.tar (debian 13.7)",
+      "Target": "~/scan-artifacts/app-dependency-cve.tar (debian 13.7)",
       "Class": "os-pkgs",
       "Type": "debian",
       "Packages": [
