@@ -10,11 +10,15 @@ the finding's package is named in the entry AND the finding's ID (or any ID
 the scanner lists as related, e.g. Grype's GHSA -> CVE link) equals the
 entry's cve_id or one of its aliases.
 
-Entries with affected_status DISPUTED are reported separately: they count
-toward neither recall nor precision.
+Entry statuses (affected_status):
+  AFFECTED           scanner SHOULD report it (counts toward recall)
+  FIXED_BY_BACKPORT  vendor already fixed it; scanner should NOT report it.
+                     Reporting it is a FALSE POSITIVE (severity is recorded,
+                     since a wrongly reported High/Critical can wrongly block
+                     a release).
+  DISPUTED           counted separately: neither recall nor precision.
 
-Only findings on packages named in the key are examined. Findings on other
-packages (e.g. base-image OS packages) are out of scope for that key.
+Only findings on packages named in the key are examined.
 
 Usage:
     python3 scripts/compare_findings.py \
@@ -27,6 +31,8 @@ Usage:
 import argparse
 import csv
 import json
+
+SERIOUS = {"HIGH", "CRITICAL"}
 
 
 def load_json(path):
@@ -103,6 +109,12 @@ def count_unkeyed(entries, findings):
     return n
 
 
+def new_tally():
+    return {"hit": 0, "total": 0, "sev_ok": 0,
+            "disp_rep": 0, "disp_total": 0,
+            "bp_rep": 0, "bp_total": 0, "bp_serious": 0}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--ground-truth", required=True)
@@ -124,17 +136,20 @@ def main():
         print(f"{name} raw findings loaded: {len(findings)}")
     print("-" * 70)
 
-    tally = {name: {"hit": 0, "total": 0, "sev_ok": 0, "disp_rep": 0, "disp_total": 0}
-             for name, _ in scanners}
+    tally = {name: new_tally() for name, _ in scanners}
     rows = []
 
     for entry in entries:
-        disputed = entry.get("affected_status") == "DISPUTED"
+        status = entry.get("affected_status")
+        disputed = status == "DISPUTED"
+        backported = status == "FIXED_BY_BACKPORT"
         print(f"\nCVE: {entry['cve_id']}")
         print(f"  Reference severity (NVD-based): {entry['reference_severity']}")
         print(f"  Expected packages: {', '.join(entry['packages'])}")
         if disputed:
             print("  ** DISPUTED: counted separately, not in recall or precision **")
+        if backported:
+            print("  ** FIXED BY VENDOR BACKPORT: a scanner should NOT report this **")
 
         for name, findings in scanners:
             r = check_entry(entry, findings)
@@ -147,6 +162,18 @@ def main():
                           f"(native severity {r['severities']})")
                 else:
                     print(f"  {name:6s}: did not report the disputed CVE")
+            elif backported:
+                t["bp_total"] += 1
+                if r["caught"]:
+                    t["bp_rep"] += 1
+                    serious = bool(set(r["severities"]) & SERIOUS)
+                    if serious:
+                        t["bp_serious"] += 1
+                    flag = "  <-- serious: could wrongly block a release" if serious else ""
+                    print(f"  {name:6s}: FALSE POSITIVE, reported as {r['reported_as']} "
+                          f"(native severity {r['severities']}){flag}")
+                else:
+                    print(f"  {name:6s}: correctly NOT reported")
             else:
                 t["total"] += 1
                 if r["caught"]:
@@ -163,9 +190,9 @@ def main():
             rows.append({
                 "image": gt["image"],
                 "cve_id": entry["cve_id"],
-                "affected_status": entry.get("affected_status"),
+                "affected_status": status,
                 "scanner": name,
-                "caught": r["caught"],
+                "reported": r["caught"],
                 "reported_as": ";".join(r.get("reported_as", [])),
                 "native_severity": ";".join(r.get("severities", [])),
                 "reference_severity": entry["reference_severity"],
@@ -173,14 +200,17 @@ def main():
             })
 
     print("\n" + "-" * 70)
-    print("SUMMARY (recall on non-disputed entries of the verified key)")
+    print("SUMMARY")
     for name, findings in scanners:
         t = tally[name]
-        print(f"  {name}: caught {t['hit']}/{t['total']}, "
-              f"severity matched on {t['sev_ok']} of {t['hit']} caught; "
-              f"disputed reported {t['disp_rep']}/{t['disp_total']}; "
-              f"other findings on key packages not in key: "
-              f"{count_unkeyed(entries, findings)}")
+        line = (f"  {name}: recall {t['hit']}/{t['total']} "
+                f"(severity matched on {t['sev_ok']} of {t['hit']} caught); "
+                f"disputed reported {t['disp_rep']}/{t['disp_total']}")
+        if t["bp_total"]:
+            line += (f"; backported CVEs wrongly reported {t['bp_rep']}/{t['bp_total']} "
+                     f"({t['bp_serious']} High/Critical)")
+        line += f"; other findings on key packages not in key: {count_unkeyed(entries, findings)}"
+        print(line)
 
     if args.csv:
         with open(args.csv, "w", newline="") as f:
