@@ -1,0 +1,2301 @@
+{
+ "CVE-2005-2541": {
+  "fetched_utc": "2026-11-12T00:28Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2007-5686": {
+  "fetched_utc": "2026-11-12T00:28Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2009-5155": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:28Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2010-4756": {
+  "fetched_utc": "2026-11-12T00:28Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2011-3374": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:28Z",
+  "score": 3.7,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2011-3389": {
+  "fetched_utc": "2026-11-12T00:28Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2011-4116": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:28Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2013-4235": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:28Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2013-4392": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:28Z",
+  "score": 5.0,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2015-8985": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2016-10228": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2016-10739": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2016-2779": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2016-2781": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-1000082": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-11164": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-12132": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-16231": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:29Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-18018": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:30Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-18078": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:30Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-7245": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:30Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2017-7246": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:30Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-1000001": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:30Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-1000858": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:30Z",
+  "score": 8.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-12886": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:30Z",
+  "score": 8.1,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-16888": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:31Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-18074": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:31Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-19211": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:31Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-20796": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:31Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-5709": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:31Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-6485": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:31Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-6551": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:31Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-6829": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-6954": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-7169": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2018-9234": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-1010022": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-1010023": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 8.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-1010024": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-1010025": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:32Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-12900": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-13627": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 6.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-14855": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-17543": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 8.1,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-17594": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-17595": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 5.4,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-18276": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-19126": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-19882": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:33Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-20386": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 2.4,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-20838": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-25013": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-3843": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-3844": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-6488": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-7309": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-8457": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:34Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-9169": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-9192": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2019-9923": {
+  "cvss_version": "3.0",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-10029": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-13529": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 6.1,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-13776": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 6.7,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-14155": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-16156": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-1712": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:35Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-1751": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 7.0,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-1752": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 7.0,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-27618": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2020-6096": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 8.1,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-20193": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-27645": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 2.5,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-3326": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-33560": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-33574": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:36Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-35942": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 9.1,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-36084": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-36085": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-36086": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-36087": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-37600": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-39537": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 8.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-3997": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-3999": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:37Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-45346": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:38Z",
+  "score": 4.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-0563": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:38Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-1304": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:38Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-23218": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:38Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-23219": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:38Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-27943": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:38Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-29458": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:38Z",
+  "score": 7.1,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-3219": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:39Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-34903": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:39Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-31437": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:39Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-31438": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:39Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-31439": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:39Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-31486": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:39Z",
+  "score": 8.1,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-32681": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 6.1,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-45853": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-50495": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2023-52426": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2024-10041": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2024-2236": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2024-26458": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2024-26461": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:40Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2024-35195": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:41Z",
+  "score": 5.6,
+  "severity": "MEDIUM",
+  "source": "security-advisories@github.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2024-47081": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:41Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "security-advisories@github.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2024-56433": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:41Z",
+  "score": 3.6,
+  "severity": "LOW",
+  "source": "cve@mitre.org",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-12781": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:41Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2025-13151": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:41Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2025-14104": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:41Z",
+  "score": 6.1,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-15366": {
+  "fetched_utc": "2026-11-12T00:41Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-15367": {
+  "fetched_utc": "2026-11-12T00:41Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-15649": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:41Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-27587": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:42Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-29088": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:42Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2025-30258": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:42Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2025-5278": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:42Z",
+  "score": 4.4,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-6141": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:42Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "cna@vuldb.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-66382": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:42Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2025-66471": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:42Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2025-68972": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:43Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2025-69720": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:43Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2025-70873": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:43Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2025-7458": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:43Z",
+  "score": 9.1,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2025-7709": {
+  "fetched_utc": "2026-11-12T00:43Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2025-8869": {
+  "fetched_utc": "2026-11-12T00:43Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-0864": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:43Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-102010": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:43Z",
+  "score": 7.0,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-102473": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:44Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-102474": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:44Z",
+  "score": 4.0,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-105712": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:44Z",
+  "score": 3.6,
+  "severity": "LOW",
+  "source": "cve@mitre.org",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-107364": {
+  "fetched_utc": "2026-11-12T00:44Z",
+  "severity": "NOT_FOUND"
+ },
+ "CVE-2026-107496": {
+  "fetched_utc": "2026-11-12T00:44Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-107708": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:44Z",
+  "score": 4.9,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-107778": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:44Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-107884": {
+  "fetched_utc": "2026-11-12T00:44Z",
+  "severity": "NOT_FOUND"
+ },
+ "CVE-2026-109518": {
+  "fetched_utc": "2026-11-12T00:44Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Received"
+ },
+ "CVE-2026-111423": {
+  "fetched_utc": "2026-11-12T00:45Z",
+  "severity": "NOT_FOUND"
+ },
+ "CVE-2026-112314": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112315": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Primary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112316": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112317": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Primary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112318": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Primary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112319": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112320": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Primary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112321": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:45Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112322": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:46Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-112323": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:46Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Primary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-113351": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:46Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-114583": {
+  "fetched_utc": "2026-11-12T00:46Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-114690": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:46Z",
+  "score": 6.2,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-114691": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:46Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-115456": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:46Z",
+  "score": 3.7,
+  "severity": "LOW",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-115506": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:46Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-115557": {
+  "fetched_utc": "2026-11-12T00:46Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-116566": {
+  "fetched_utc": "2026-11-12T00:47Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-117610": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:47Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-11822": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:47Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-11824": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:47Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-118370": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:47Z",
+  "score": 8.2,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-118380": {
+  "fetched_utc": "2026-11-12T00:47Z",
+  "severity": "NOT_FOUND"
+ },
+ "CVE-2026-11850": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:47Z",
+  "score": 5.0,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-119079": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:47Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Primary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-119371": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-119372": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-119373": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-119374": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-119375": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-119376": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-119377": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-119378": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-119379": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:48Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-11940": {
+  "fetched_utc": "2026-11-12T00:49Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-119591": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:49Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-11972": {
+  "fetched_utc": "2026-11-12T00:49Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-12003": {
+  "fetched_utc": "2026-11-12T00:49Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-12087": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:49Z",
+  "score": 9.1,
+  "severity": "CRITICAL",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-12345": {
+  "fetched_utc": "2026-11-12T00:49Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-124317": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 4.8,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-13221": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 9.1,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-13346": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-13595": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-13757": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 6.2,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-15059": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "98a521c5-3a3e-4e2b-bc27-002067e0463c",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-15534": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 5.7,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-16742": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:50Z",
+  "score": 6.7,
+  "severity": "MEDIUM",
+  "source": "98a521c5-3a3e-4e2b-bc27-002067e0463c",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-1703": {
+  "fetched_utc": "2026-11-12T00:50Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-18374": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 4.9,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-18477": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 4.4,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-18508": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 4.4,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-18938": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 6.2,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-19487": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-19499": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 7.7,
+  "severity": "HIGH",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-19542": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 5.6,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-19552": {
+  "fetched_utc": "2026-11-12T00:51Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-25645": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:51Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-27171": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:52Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-27456": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:52Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "security-advisories@github.com",
+  "type": "Secondary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-3184": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:52Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-3219": {
+  "fetched_utc": "2026-11-12T00:52Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-3446": {
+  "fetched_utc": "2026-11-12T00:52Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-3479": {
+  "fetched_utc": "2026-11-12T00:52Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-40228": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:52Z",
+  "score": 3.3,
+  "severity": "LOW",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-41080": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:52Z",
+  "score": 2.9,
+  "severity": "LOW",
+  "source": "cve@mitre.org",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-41991": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 4.7,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-41992": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-42250": {
+  "fetched_utc": "2026-11-12T00:53Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-42496": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 9.1,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-42497": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-48959": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-48962": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 7.3,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-50812": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-50813": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:53Z",
+  "score": 6.1,
+  "severity": "MEDIUM",
+  "source": "cve@mitre.org",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-53613": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 7.0,
+  "severity": "HIGH",
+  "source": "security-advisories@github.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-53615": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 8.0,
+  "severity": "HIGH",
+  "source": "security-advisories@github.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-53910": {
+  "fetched_utc": "2026-11-12T00:54Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-5435": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 7.3,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-54369": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 7.1,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-54370": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 6.3,
+  "severity": "MEDIUM",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-54371": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 7.1,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-54411": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "309f9ea4-e3e9-4c6c-b79d-e8eb01244f2c",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-5450": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:54Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-56391": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 6.1,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-56392": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 6.1,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-5704": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-57062": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 2.9,
+  "severity": "LOW",
+  "source": "cve@mitre.org",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-57432": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 8.4,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-57433": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-5928": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-6019": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 6.1,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-6238": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:55Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-6357": {
+  "fetched_utc": "2026-11-12T00:56Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-6368": {
+  "fetched_utc": "2026-11-12T00:56Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-67693": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:56Z",
+  "score": 3.7,
+  "severity": "LOW",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-6791": {
+  "fetched_utc": "2026-11-12T00:56Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-6879": {
+  "fetched_utc": "2026-11-12T00:56Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-7010": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:56Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-7017": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:56Z",
+  "score": 7.1,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-71199": {
+  "fetched_utc": "2026-11-12T00:56Z",
+  "severity": "NOT_FOUND"
+ },
+ "CVE-2026-71200": {
+  "fetched_utc": "2026-11-12T00:56Z",
+  "severity": "NOT_FOUND"
+ },
+ "CVE-2026-7210": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-76642": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-76844": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 7.4,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Primary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-77117": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-78408": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 7.9,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-78409": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 7.0,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-78410": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 7.8,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-80489": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-82560": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:57Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Deferred"
+ },
+ "CVE-2026-8376": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-84243": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 7.0,
+  "severity": "HIGH",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-85091": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 7.4,
+  "severity": "HIGH",
+  "source": "disclosure@vulncheck.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-85231": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-85977": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-8643": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-8674": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-86805": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:58Z",
+  "score": 6.3,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-88647": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:59Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-88648": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:59Z",
+  "score": 3.7,
+  "severity": "LOW",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-88822": {
+  "fetched_utc": "2026-11-12T00:59Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-88823": {
+  "fetched_utc": "2026-11-12T00:59Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-89092": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:59Z",
+  "score": 4.2,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-95184": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:59Z",
+  "score": 5.9,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-95210": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:59Z",
+  "score": 4.8,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-9538": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:59Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2026-95619": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T00:59Z",
+  "score": 7.7,
+  "severity": "HIGH",
+  "source": "secalert@redhat.com",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-95691": {
+  "fetched_utc": "2026-11-12T01:00Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-95692": {
+  "fetched_utc": "2026-11-12T01:00Z",
+  "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-95818": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T01:00Z",
+  "score": 3.6,
+  "severity": "LOW",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-97399": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T01:00Z",
+  "score": 3.7,
+  "severity": "LOW",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-97687": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T01:00Z",
+  "score": 8.1,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ },
+ "CVE-2026-97689": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-12T01:01Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Analyzed"
+ }
+}
