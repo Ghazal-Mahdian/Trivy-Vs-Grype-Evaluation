@@ -1,0 +1,17 @@
+{
+  "image": "minimal-base-pass",
+  "kind": "gate-behavior (no planted flaws)",
+  "base_image": "gcr.io/distroless/static-debian12",
+  "base_digest": "gcr.io/distroless/static-debian12@sha256:d75cdd72874d4790092fcb1b058493ecf6bb5bf2b2b897045b00ff01d91843f2",
+  "platform": "linux/amd64",
+  "key_built_before_scanning": true,
+  "entries": [],
+  "predictions": {
+    "status": "HYPOTHESES recorded before scanning; not part of the answer key",
+    "P1": "PASS for both scanners",
+    "P2": "PASS for both scanners",
+    "P3": "PASS for both scanners",
+    "basis": "distroless static ships almost no packages. Uncertain: it may still list OS packages such as tzdata or ca-certificates, which could carry findings.",
+    "how_scored": "Any HIGH/CRITICAL finding a scanner reports is checked individually against vendor records; a serious finding that does not apply is a wrongful-block candidate."
+  }
+}

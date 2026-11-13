@@ -1,0 +1,18 @@
+{
+  "image": "updated-base-pass",
+  "kind": "gate-behavior (no planted flaws)",
+  "base_image": "debian:bookworm-slim, apt dist-upgrade applied at build",
+  "base_digest": "debian:bookworm-slim@sha256:7c7b2c966bc9ee8cedfeef67e0e279108992c77681fa595db4a9d65c06ccc587",
+  "platform": "linux/amd64",
+  "key_built_before_scanning": true,
+  "simulated_upgrade_2026-11-11": ["perl-base 5.36.0-7+deb12u3 -> u4", "libapt-pkg6.0 2.6.1 -> 2.6.2", "apt 2.6.1 -> 2.6.2", "tzdata 2026c -> 2026f"],
+  "entries": [],
+  "predictions": {
+    "status": "HYPOTHESES recorded before scanning; not part of the answer key",
+    "P3": "PASS for both scanners (no fixable HIGH/CRITICAL should remain)",
+    "P1": "BLOCK for both, on DIFFERENT findings: Trivy on zlib CVE-2023-45853 (CRITICAL, Debian: not built, ignored); Grype on glibc CVE-2026-5450 (Critical, wont-fix; Debian: open, minor)",
+    "P2": "BLOCK for both (unfixed HIGH/CRITICAL items remain)",
+    "basis": "image backport-fix-cve scan reports, 2026-11-11",
+    "how_scored": "Each remaining HIGH/CRITICAL finding is checked individually against Debian's tracker and NVD."
+  }
+}
