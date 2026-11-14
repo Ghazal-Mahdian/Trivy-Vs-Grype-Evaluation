@@ -1,0 +1,252 @@
+{
+  "image": "java-shaded-jar-cve",
+  "ecosystem": "Maven",
+  "layout": "one shaded (fat) jar, packages relocated (shaded.*), copied alone into a distroless static base; no JRE",
+  "scope": "Java libraries inside /app/app.jar only. Base-image packages are OUT OF SCOPE for this key; they are counted separately.",
+  "base_image": "maven:3.9-eclipse-temurin-17 (build stage), gcr.io/distroless/static-debian12 (final stage)",
+  "base_digest": "gcr.io/distroless/static-debian12@sha256:d75cdd72874d4790092fcb1b058493ecf6bb5bf2b2b897045b00ff01d91843f2",
+  "build_image_digest": "maven:3.9-eclipse-temurin-17@sha256:1a352420f7aba21f5ad08df31bab55f74c013fb491f1ae8ab1dd7ff9ed698584",
+  "platform": "linux/amd64",
+  "severity_reference": "NVD primary CVSS base severity (nvd@nist.gov); if no NVD primary, the secondary CNA score, source recorded; scanner-native severities are not stored here",
+  "key_built_before_scanning": true,
+  "nvd_checked": "2026-11-14",
+  "upstream_advisories_source": "OSV queries (Maven ecosystem), 2026-11-14: commons-text 1.9 (1 advisory), snakeyaml 1.30 (7), commons-lang3 3.11 (1), slf4j-api 2.0.9 (0, control)",
+  "independence_note": "The key comes from OSV/GitHub advisory data and NVD, not from scanner output. OSV/GHSA data is also upstream of both scanners' databases, so agreement with it is not fully independent evidence.",
+  "status_meanings": {
+    "AFFECTED": "scanner SHOULD report it (counts toward recall)",
+    "FIXED_BY_BACKPORT": "scanner should NOT report it (reporting = false positive)",
+    "DISPUTED": "counted separately"
+  },
+  "entries": [
+    {
+      "cve_id": "CVE-2022-42889",
+      "aliases": [
+        "GHSA-599f-7c49-w659"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "commons-text"
+      ],
+      "installed_version": "1.9",
+      "dependency_path": "commons-text@1.9 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "CRITICAL",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 9.8,
+        "severity": "CRITICAL",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "CRITICAL",
+      "fix_status": "Fixed upstream in 1.10.0. Installed 1.9 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-599f-7c49-w659 ; https://nvd.nist.gov/vuln/detail/CVE-2022-42889",
+      "date_reviewed": "2026-11-14"
+    },
+    {
+      "cve_id": "CVE-2022-25857",
+      "aliases": [
+        "GHSA-3mc7-4q67-w48m"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "snakeyaml"
+      ],
+      "installed_version": "1.30",
+      "dependency_path": "snakeyaml@1.30 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "HIGH",
+      "fix_status": "Fixed upstream in 1.31. Installed 1.30 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-3mc7-4q67-w48m ; https://nvd.nist.gov/vuln/detail/CVE-2022-25857",
+      "date_reviewed": "2026-11-14"
+    },
+    {
+      "cve_id": "CVE-2022-38751",
+      "aliases": [
+        "GHSA-98wm-3w3q-mw94"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "snakeyaml"
+      ],
+      "installed_version": "1.30",
+      "dependency_path": "snakeyaml@1.30 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 6.5,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "MODERATE",
+      "fix_status": "Fixed upstream in 1.31. Installed 1.30 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-98wm-3w3q-mw94 ; https://nvd.nist.gov/vuln/detail/CVE-2022-38751",
+      "date_reviewed": "2026-11-14"
+    },
+    {
+      "cve_id": "CVE-2022-38752",
+      "aliases": [
+        "GHSA-9w3m-gqgf-c4p9"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "snakeyaml"
+      ],
+      "installed_version": "1.30",
+      "dependency_path": "snakeyaml@1.30 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 6.5,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "MODERATE",
+      "fix_status": "Fixed upstream in 1.32. Installed 1.30 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-9w3m-gqgf-c4p9 ; https://nvd.nist.gov/vuln/detail/CVE-2022-38752",
+      "date_reviewed": "2026-11-14"
+    },
+    {
+      "cve_id": "CVE-2022-38749",
+      "aliases": [
+        "GHSA-c4r9-r8fh-9vj2"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "snakeyaml"
+      ],
+      "installed_version": "1.30",
+      "dependency_path": "snakeyaml@1.30 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 6.5,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "MODERATE",
+      "fix_status": "Fixed upstream in 1.31. Installed 1.30 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-c4r9-r8fh-9vj2 ; https://nvd.nist.gov/vuln/detail/CVE-2022-38749",
+      "date_reviewed": "2026-11-14"
+    },
+    {
+      "cve_id": "CVE-2022-38750",
+      "aliases": [
+        "GHSA-hhhw-99gj-p3c3"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "snakeyaml"
+      ],
+      "installed_version": "1.30",
+      "dependency_path": "snakeyaml@1.30 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 5.5,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "MODERATE",
+      "fix_status": "Fixed upstream in 1.31. Installed 1.30 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-hhhw-99gj-p3c3 ; https://nvd.nist.gov/vuln/detail/CVE-2022-38750",
+      "date_reviewed": "2026-11-14"
+    },
+    {
+      "cve_id": "CVE-2022-1471",
+      "aliases": [
+        "GHSA-mjmj-j48q-9wg2"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "snakeyaml"
+      ],
+      "installed_version": "1.30",
+      "dependency_path": "snakeyaml@1.30 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "CRITICAL",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 9.8,
+        "severity": "CRITICAL",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "HIGH",
+      "fix_status": "Fixed upstream in 2.0. Installed 1.30 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-mjmj-j48q-9wg2 ; https://nvd.nist.gov/vuln/detail/CVE-2022-1471",
+      "date_reviewed": "2026-11-14",
+      "reference_note": "NVD primary is CRITICAL 9.8; the GitHub advisory rates it HIGH. Per the severity rule the reference is NVD (CRITICAL). A scanner using the GitHub rating will label this HIGH, which counts as a label difference from the reference, not a detection miss."
+    },
+    {
+      "cve_id": "CVE-2022-41854",
+      "aliases": [
+        "GHSA-w37g-rhq8-7m4j"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "snakeyaml"
+      ],
+      "installed_version": "1.30",
+      "dependency_path": "snakeyaml@1.30 (direct)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 6.5,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "ghsa_severity": "MODERATE",
+      "fix_status": "Fixed upstream in 1.32. Installed 1.30 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-w37g-rhq8-7m4j ; https://nvd.nist.gov/vuln/detail/CVE-2022-41854",
+      "date_reviewed": "2026-11-14"
+    },
+    {
+      "cve_id": "CVE-2025-48924",
+      "aliases": [
+        "GHSA-j288-q9x7-2f5v"
+      ],
+      "ecosystem": "Maven",
+      "packages": [
+        "commons-lang3"
+      ],
+      "installed_version": "3.11",
+      "dependency_path": "commons-text@1.9 -> commons-lang3@3.11 (transitive; the path is confirmed from `mvn dependency:tree` in the build log, key corrected only if the tree disagrees)",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 5.3,
+        "severity": "MEDIUM",
+        "score_source": "134c704f-9b21-4f2e-91b3-4a467353bcc0 (secondary; no NVD primary yet)"
+      },
+      "ghsa_severity": "MODERATE",
+      "fix_status": "Fixed upstream in 3.18.0. Installed 3.11 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-j288-q9x7-2f5v ; https://nvd.nist.gov/vuln/detail/CVE-2025-48924",
+      "date_reviewed": "2026-11-14",
+      "reference_note": "NVD has no primary score for this CVE yet (status Modified). Reference severity uses the secondary CNA score 5.3 MEDIUM (source 134c704f-9b21-4f2e-91b3-4a467353bcc0); the GitHub advisory is also MODERATE."
+    }
+  ],
+  "clean_controls": "slf4j-api 2.0.9 has no advisories (OSV, 2026-11-14); any finding on slf4j-api is a false positive and is checked manually.",
+  "predictions": {
+    "status": "HYPOTHESES recorded before building or scanning; not part of the answer key.",
+    "detection": "Both tools report most or all of the 9 entries (recall 7 to 9 of 9 each). Moderate confidence: the shade plugin keeps each library's pom.properties inside the jar even after relocation, which is what scanners read. Most likely place for a miss: the transitive commons-lang3 entry (CVE-2025-48924), the newest advisory, whose library also sits inside the shaded jar.",
+    "severity": "Both tools use GitHub severities for Maven, so both label CVE-2022-1471 HIGH while the reference is CRITICAL (a label difference, not a miss). Other labels match the reference. Moderate confidence.",
+    "false_positives": "Neither tool reports anything on slf4j-api.",
+    "P1": "BLOCK for both (commons-text CVE-2022-42889 is Critical).",
+    "P2": "BLOCK for both.",
+    "P3": "BLOCK for both (fixed versions exist).",
+    "note": "Trivy's base-image advisory IDs (UNKNOWN) cannot change any BLOCK, since BLOCK wins over REVIEW.",
+    "how_scored": "Package-level findings are scored against the entries above; base-image findings are listed separately."
+  }
+}
