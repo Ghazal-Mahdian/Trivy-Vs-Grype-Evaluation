@@ -48,7 +48,7 @@ def extract_trivy_findings(report):
             findings.append({
                 "id": vid,
                 "ids": {vid},
-                "package": v.get("PkgName"),
+                "package": norm_pkg(v.get("PkgName")),
                 "version": v.get("InstalledVersion"),
                 "severity": (v.get("Severity") or "").upper(),
             })
@@ -66,7 +66,7 @@ def extract_grype_findings(report):
         findings.append({
             "id": vuln.get("id"),
             "ids": ids,
-            "package": art.get("name"),
+            "package": norm_pkg(art.get("name")),
             "version": art.get("version"),
             "severity": (vuln.get("severity") or "").upper(),
         })
@@ -77,8 +77,15 @@ def wanted_ids(entry):
     return {entry["cve_id"], *entry.get("aliases", [])}
 
 
+def norm_pkg(name):
+    """Package name for matching. Java scanners differ: Trivy reports Maven coordinates
+    ("org.yaml:snakeyaml"), Grype the artifact only ("snakeyaml"). Compare the artifact
+    part (after the last colon). Names without a colon are unchanged."""
+    return (name or "").split(":")[-1]
+
+
 def check_entry(entry, findings):
-    pkgs = set(entry["packages"])
+    pkgs = {norm_pkg(x) for x in entry["packages"]}
     wanted = wanted_ids(entry)
     hits = [f for f in findings if f["package"] in pkgs and f["ids"] & wanted]
     if not hits:
@@ -95,13 +102,13 @@ def check_entry(entry, findings):
 
 
 def count_unkeyed(entries, findings):
-    key_pkgs = {p for e in entries for p in e["packages"]}
+    key_pkgs = {norm_pkg(p) for e in entries for p in e["packages"]}
     n = 0
     for f in findings:
         if f["package"] not in key_pkgs:
             continue
         keyed = any(
-            f["package"] in e["packages"] and f["ids"] & wanted_ids(e)
+            f["package"] in {norm_pkg(x) for x in e["packages"]} and f["ids"] & wanted_ids(e)
             for e in entries
         )
         if not keyed:

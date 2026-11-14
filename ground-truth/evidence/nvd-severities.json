@@ -793,6 +793,15 @@
   "type": "Primary",
   "vulnStatus": "Modified"
  },
+ "CVE-2022-1471": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:21Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
  "CVE-2022-23218": {
   "cvss_version": "3.1",
   "fetched_utc": "2026-11-12T00:38Z",
@@ -807,6 +816,15 @@
   "fetched_utc": "2026-11-12T00:38Z",
   "score": 9.8,
   "severity": "CRITICAL",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-25857": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:21Z",
+  "score": 7.5,
+  "severity": "HIGH",
   "source": "nvd@nist.gov",
   "type": "Primary",
   "vulnStatus": "Modified"
@@ -843,6 +861,60 @@
   "fetched_utc": "2026-11-12T00:39Z",
   "score": 6.5,
   "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-38749": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:21Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-38750": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:22Z",
+  "score": 5.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-38751": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:22Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-38752": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:22Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-41854": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:22Z",
+  "score": 6.5,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2022-42889": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:23Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
   "source": "nvd@nist.gov",
   "type": "Primary",
   "vulnStatus": "Modified"
@@ -1054,6 +1126,15 @@
   "source": "nvd@nist.gov",
   "type": "Primary",
   "vulnStatus": "Analyzed"
+ },
+ "CVE-2025-48924": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T18:23Z",
+  "score": 5.3,
+  "severity": "MEDIUM",
+  "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+  "type": "Secondary",
+  "vulnStatus": "Modified"
  },
  "CVE-2025-5278": {
   "cvss_version": "3.1",

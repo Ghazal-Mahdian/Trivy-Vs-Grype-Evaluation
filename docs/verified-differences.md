@@ -51,9 +51,12 @@ Every comparison is same-image, same-tarball. Database snapshots differ between 
 - Image 3 (backported fixes): both tools 3/3 recall and 0 of 7 backport false positives.
 - Image 7 (npm transitive dependency, installed): both tools 2/2 recall, severities equal to NVD, no findings on the clean parent package (mkdirp); native and NVD-reference gates both BLOCK for both tools.
 - Image 8 (npm lockfile only, packages declared but not installed): neither tool reports the two DISPUTED minimist advisories (0/2 each). Pre-registered prediction that Trivy would report both was WRONG (Grype half was right). Image-scan mode appears not to use the lockfile; not verified, and a filesystem scan of the same files may behave differently (test when building CI). Gate split on this image is REVIEW (Trivy, 4 base-image advisory IDs) vs PASS (Grype), the same D4 pattern.
+- Image 9 (Java shaded jar, packages relocated; commons-text 1.9, snakeyaml 1.30, commons-lang3 3.11 transitive, slf4j-api 2.0.9 clean control): both tools 9/9 recall, nothing reported on slf4j-api, native and NVD-reference gates BLOCK on all three policies for both tools. Both tools label CVE-2022-1471 as HIGH while NVD primary is CRITICAL (the GitHub advisory says HIGH), the same label-difference pattern as D3 and not a detection difference. Every pre-registered prediction held. Observation for CI and timing: Trivy downloaded a separate Java database (about 950 MB, 1 min 16 s on this network, cached for 3 days) before scanning the jar; the Grype run showed no equivalent download (not investigated).
 
 ## Limitations to state in the paper
-- Eight images; two are should-pass images with empty keys.
+- Nine images; two are should-pass images with empty keys.
 - NVD reference coverage: about 89 to 100% of CVE findings on images 1, 2 and 5, about 77% on image 3 (96 unscored CVEs).
 - Database snapshots differ between images; within-image comparisons are same-day.
 - The REVIEW rule and the exclusion of advisory-ID findings and disputed CVEs are design choices, documented above.
+- Harness bug found and fixed on image 9: the first scoring run showed Trivy at 0/9 because Trivy names Java packages as Maven coordinates (org.yaml:snakeyaml) while the key and Grype use the artifact name (snakeyaml). Trivy's own scan summary (9 matches) contradicted the 0/9, which is how it was caught. compare_findings.py now compares the artifact part of the name; re-scoring every image changed only this one result (Trivy Java 0/9 to 9/9). The fix concerns name matching only, not which advisory IDs count.
+- Earlier harness bug (found on image 7): gate_compare.py shared DISPUTED CVEs between images. Fixed so an image's own key decides, with only the glibc dispute shared explicitly.
