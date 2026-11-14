@@ -7,8 +7,13 @@ Policies (native severity labels of the scanner being gated):
   P2  block if any finding is HIGH or CRITICAL
   P3  block if any HIGH or CRITICAL finding has a fix available
 
-Exit codes: 0 = pass, 1 = block, 2 = error (missing/invalid report).
+Unknown severity is never treated as safe: if nothing blocks but at least
+one finding has UNKNOWN severity, the result is REVIEW (a human must look).
+
+Exit codes: 0 = pass, 1 = block, 2 = error (missing/invalid report),
+            3 = review needed (unknown severity present, nothing blocking).
 Errors fail closed: a scan that did not complete must never look like a pass.
+REVIEW also never counts as a pass.
 
 Usage:
     python3 scripts/gate.py --scanner trivy --policy P2 --report scanners/reports/trivy-os-package-cve.json
@@ -83,6 +88,8 @@ def main():
     sevs = POLICY_SEVERITIES[args.policy]
     blocking = [f for f in findings if f["severity"] in sevs
                 and (args.policy != "P3" or f["fix"])]
+    unknown = [f for f in findings if f["severity"] == "UNKNOWN"]
+
     for f in blocking[:5]:
         print(f"  blocking: {f['id']} {f['package']} {f['severity']} fix={f['fix']}")
     if len(blocking) > 5:
@@ -91,6 +98,15 @@ def main():
     if blocking:
         print(f"RESULT: BLOCK ({args.policy}, {len(blocking)} blocking findings)")
         sys.exit(1)
+
+    if unknown:
+        for f in unknown[:5]:
+            print(f"  needs review: {f['id']} {f['package']} UNKNOWN fix={f['fix']}")
+        if len(unknown) > 5:
+            print(f"  ... and {len(unknown) - 5} more")
+        print(f"RESULT: REVIEW ({args.policy}, {len(unknown)} findings with unknown severity)")
+        sys.exit(3)
+
     print(f"RESULT: PASS ({args.policy})")
     sys.exit(0)
 

@@ -1119,6 +1119,15 @@
   "type": "Primary",
   "vulnStatus": "Analyzed"
  },
+ "CVE-2026-100290": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T02:29Z",
+  "score": 3.7,
+  "severity": "LOW",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
+  "vulnStatus": "Awaiting Analysis"
+ },
  "CVE-2026-102010": {
   "cvss_version": "3.1",
   "fetched_utc": "2026-11-12T00:43Z",
@@ -1338,6 +1347,15 @@
  "CVE-2026-115557": {
   "fetched_utc": "2026-11-12T00:46Z",
   "severity": "UNSCORED",
+  "vulnStatus": "Awaiting Analysis"
+ },
+ "CVE-2026-115819": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T02:29Z",
+  "score": 4.8,
+  "severity": "MEDIUM",
+  "source": "3ff69d7a-14f2-4f67-a097-88dee7810d18",
+  "type": "Secondary",
   "vulnStatus": "Awaiting Analysis"
  },
  "CVE-2026-116566": {
