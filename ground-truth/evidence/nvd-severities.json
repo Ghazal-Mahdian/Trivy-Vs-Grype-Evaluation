@@ -595,6 +595,15 @@
   "type": "Primary",
   "vulnStatus": "Modified"
  },
+ "CVE-2020-26160": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T06:47Z",
+  "score": 7.5,
+  "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
  "CVE-2020-27618": {
   "cvss_version": "3.1",
   "fetched_utc": "2026-11-12T00:36Z",

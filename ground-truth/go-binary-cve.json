@@ -119,5 +119,12 @@
     "P2": "BLOCK for both, driven by the HIGH jwt-go finding. Uncertain if a tool labels it lower than High.",
     "P3": "PASS for both, driven by jwt-go having no fixed version in its module path (the websocket advisory is MEDIUM, so it cannot block P3). LOW confidence: a tool that shows the /v4 fix as 'fix available' would BLOCK P3, which would be the first BLOCK-vs-PASS split. This is the main reason this image exists.",
     "how_scored": "Module findings are scored against the entries above. Stdlib findings and base-image findings are listed separately and not scored; the Go toolchain version is recorded after the build."
-  }
+  },
+  "go_toolchain": "go1.26.11 (go version -m /out/app in the build log, 2026-11-13)",
+  "embedded_modules_evidence": [
+    "github.com/dgrijalva/jwt-go v3.2.0+incompatible",
+    "github.com/gorilla/websocket v1.4.2",
+    "gopkg.in/yaml.v3 v3.0.1"
+  ],
+  "evidence_note": "Added after the build, before any scan result was read; recorded as the predictions said it would be. Entries and predictions are unchanged from commit c5af725."
 }

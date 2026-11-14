@@ -1,0 +1,33 @@
+{
+  "recorded_at_utc": "2026-11-14T06:36:32Z",
+  "image_tarball": "go-binary-cve.tar",
+  "image_tarball_sha256": "81717914bd4f18e41f9854333960bbe2929df7b2dfc46c107afe63c0bf8d7f18",
+  "trivy": {
+    "Version": "0.74.0",
+    "VulnerabilityDB": {
+      "Version": 2,
+      "NextUpdate": "2026-11-14T12:56:33.451543367Z",
+      "UpdatedAt": "2026-11-13T12:56:33.451543713Z",
+      "DownloadedAt": "2026-11-13T14:55:10.169227Z"
+    }
+  },
+  "grype": {
+    "application": "grype",
+    "buildDate": "2026-10-02T13:23:52Z",
+    "compiler": "gc",
+    "gitCommit": "Homebrew",
+    "gitDescription": "[not provided]",
+    "goVersion": "go1.27.1",
+    "platform": "darwin/arm64",
+    "supportedDbSchema": 6,
+    "syftVersion": "v1.54.0",
+    "version": "0.120.0"
+  },
+  "grype_db": {
+    "schemaVersion": "v6.1.10",
+    "from": "https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.10_2026-11-13T00:21:35Z_1794584434.tar.zst?checksum=sha256%3A45d983a9834f587403cb814a0f8f6078c905a7c85a84c3c52efb994f125bcf84",
+    "built": "2026-11-13T15:40:34Z",
+    "path": "/Users/ghazal/Library/Caches/grype/db/6/vulnerability.db",
+    "valid": true
+  }
+}
