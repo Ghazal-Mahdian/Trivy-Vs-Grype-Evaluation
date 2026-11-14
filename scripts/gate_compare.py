@@ -33,21 +33,39 @@ POLICIES = ["P1", "P2", "P3"]
 RANK = {"CRITICAL": 4, "HIGH": 3, "MEDIUM": 2, "LOW": 1, "NEGLIGIBLE": 0, "NONE": 0}
 
 
-def load_disputed(gt_dir):
-    disputed = set()
+def load_keys(gt_dir):
+    """Per image key: {"listed": all ids in this key, "disputed": ids this key marks DISPUTED}."""
+    keys = {}
     for p in sorted(Path(gt_dir).glob("*.json")):
         try:
             data = json.load(open(p))
         except (OSError, json.JSONDecodeError):
             continue
         entries = data.get("entries") if isinstance(data, dict) else None
+        listed, disputed = set(), set()
         for e in entries or []:
+            ids = set(a for a in (e.get("aliases") or []) if a)
+            if e.get("cve_id"):
+                ids.add(e["cve_id"])
+            listed |= ids
             if str(e.get("affected_status") or e.get("status") or "").upper() == "DISPUTED":
-                if e.get("cve_id"):
-                    disputed.add(e["cve_id"])
-                for a in e.get("aliases") or []:
-                    disputed.add(a)
-    return disputed
+                disputed |= ids
+        keys[p.stem] = {"listed": listed, "disputed": disputed}
+    return keys
+
+
+# Disputes that apply to ANY image sharing the same base OS (glibc CVE-2019-1010022:
+# NVD rates it Critical, upstream treats it as a non-security bug). Layout-specific
+# disputes (e.g. the lockfile image's declared-but-not-installed npm packages) are
+# NOT shared: they apply only to the image whose key lists them.
+SHARED_DISPUTED = {"CVE-2019-1010022"}
+
+
+def disputed_for(keys, img):
+    """An image's own key decides for everything it lists. Anything it does not list
+    is excluded only if it is in SHARED_DISPUTED."""
+    own = keys.get(img, {"listed": set(), "disputed": set()})
+    return set(own["disputed"]) | (SHARED_DISPUTED - own["listed"])
 
 
 def extract(scanner, path):
@@ -127,11 +145,12 @@ def main():
         print(f"ERROR: cannot read NVD cache {args.cache}: {e}")
         sys.exit(2)
 
-    disputed = load_disputed(args.ground_truth)
-    print("Disputed CVEs excluded from the reference gate:",
-          ", ".join(sorted(disputed)) if disputed else "(none found)")
+    keys = load_keys(args.ground_truth)
 
     for img in args.images:
+        disputed = disputed_for(keys, img)
+        print(f"Disputed CVEs excluded from the reference gate for {img}:",
+              ", ".join(sorted(disputed)) if disputed else "(none)")
         for scanner in ("trivy", "grype"):
             path = Path(args.reports_dir) / f"{scanner}-{img}.json"
             print(f"== {img} {scanner}")

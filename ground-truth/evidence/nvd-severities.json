@@ -622,6 +622,15 @@
   "type": "Primary",
   "vulnStatus": "Modified"
  },
+ "CVE-2020-7598": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T15:50Z",
+  "score": 5.6,
+  "severity": "MEDIUM",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
  "CVE-2021-20193": {
   "cvss_version": "3.1",
   "fetched_utc": "2026-11-12T00:36Z",
@@ -744,6 +753,15 @@
   "fetched_utc": "2026-11-12T00:37Z",
   "score": 7.8,
   "severity": "HIGH",
+  "source": "nvd@nist.gov",
+  "type": "Primary",
+  "vulnStatus": "Modified"
+ },
+ "CVE-2021-44906": {
+  "cvss_version": "3.1",
+  "fetched_utc": "2026-11-14T15:50Z",
+  "score": 9.8,
+  "severity": "CRITICAL",
   "source": "nvd@nist.gov",
   "type": "Primary",
   "vulnStatus": "Modified"
