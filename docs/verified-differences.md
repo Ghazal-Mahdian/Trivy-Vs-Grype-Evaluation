@@ -49,9 +49,11 @@ Every comparison is same-image, same-tarball. Database snapshots differ between 
 ## Not differences
 - Image 2 (requests 2.19.1): both tools 5/5 recall.
 - Image 3 (backported fixes): both tools 3/3 recall and 0 of 7 backport false positives.
+- Image 7 (npm transitive dependency, installed): both tools 2/2 recall, severities equal to NVD, no findings on the clean parent package (mkdirp); native and NVD-reference gates both BLOCK for both tools.
+- Image 8 (npm lockfile only, packages declared but not installed): neither tool reports the two DISPUTED minimist advisories (0/2 each). Pre-registered prediction that Trivy would report both was WRONG (Grype half was right). Image-scan mode appears not to use the lockfile; not verified, and a filesystem scan of the same files may behave differently (test when building CI). Gate split on this image is REVIEW (Trivy, 4 base-image advisory IDs) vs PASS (Grype), the same D4 pattern.
 
 ## Limitations to state in the paper
-- Six images so far; two are should-pass images with empty keys.
+- Eight images; two are should-pass images with empty keys.
 - NVD reference coverage: about 89 to 100% of CVE findings on images 1, 2 and 5, about 77% on image 3 (96 unscored CVEs).
 - Database snapshots differ between images; within-image comparisons are same-day.
 - The REVIEW rule and the exclusion of advisory-ID findings and disputed CVEs are design choices, documented above.
