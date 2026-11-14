@@ -1,0 +1,79 @@
+{
+  "ecosystem": "npm",
+  "base_image": "node:22-slim (build stage), gcr.io/distroless/static-debian12 (final stage)",
+  "base_digest": "gcr.io/distroless/static-debian12@sha256:d75cdd72874d4790092fcb1b058493ecf6bb5bf2b2b897045b00ff01d91843f2",
+  "build_image_digest": "node:22-slim, index digest filled in at build time (see the Dockerfile)",
+  "platform": "linux/amd64",
+  "severity_reference": "NVD primary CVSS base severity (nvd@nist.gov); scanner-native severities are not stored here",
+  "key_built_before_scanning": true,
+  "nvd_checked": "2026-11-14",
+  "upstream_advisories_source": "OSV queries (npm ecosystem), 2026-11-13: minimist 0.0.8 (2 advisories), mkdirp 0.5.1 (none), minimist 1.2.8 (none, control)",
+  "independence_note": "The key comes from OSV/GitHub advisory data and NVD, not from scanner output. OSV/GHSA data is also upstream of both scanners' databases, so agreement with it is not fully independent evidence.",
+  "status_meanings": {
+    "AFFECTED": "scanner SHOULD report it (counts toward recall)",
+    "FIXED_BY_BACKPORT": "scanner should NOT report it (reporting = false positive)",
+    "DISPUTED": "counted separately"
+  },
+  "image": "node-transitive-lockfile",
+  "layout": "package.json + package-lock.json only (declared and locked, not installed)",
+  "scope": "npm packages declared in /app/package-lock.json only. Base-image packages are OUT OF SCOPE for this key; they are counted separately.",
+  "entries": [
+    {
+      "cve_id": "CVE-2021-44906",
+      "aliases": [
+        "GHSA-xvch-5gv4-984h"
+      ],
+      "ecosystem": "npm",
+      "packages": [
+        "minimist"
+      ],
+      "installed_version": "0.0.8",
+      "dependency_path": "mkdirp@0.5.1 -> minimist@0.0.8 (transitive)",
+      "affected_status": "DISPUTED",
+      "reference_severity": "CRITICAL",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 9.8,
+        "severity": "CRITICAL",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "reference_note": "GitHub advisory severity is also CRITICAL (CVSS 3.1 vector CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
+      "fix_status": "Fixed upstream in minimist 0.2.4 (0.x line) and 1.2.6. Installed 0.0.8 is affected. Because minimist is transitive, the fix means updating the parent that pulls it in.",
+      "source": "https://osv.dev/vulnerability/GHSA-xvch-5gv4-984h ; https://nvd.nist.gov/vuln/detail/CVE-2021-44906",
+      "date_reviewed": "2026-11-14",
+      "dispute_basis": "Lockfile-only image: the package is declared and locked in package-lock.json but NOT installed. A scanner that reports it (declared dependency) and one that does not (nothing installed) are both defensible, so this is recorded as behavior and counted separately, not as a miss."
+    },
+    {
+      "cve_id": "CVE-2020-7598",
+      "aliases": [
+        "GHSA-vh95-rmgr-6w4m"
+      ],
+      "ecosystem": "npm",
+      "packages": [
+        "minimist"
+      ],
+      "installed_version": "0.0.8",
+      "dependency_path": "mkdirp@0.5.1 -> minimist@0.0.8 (transitive)",
+      "affected_status": "DISPUTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 5.6,
+        "severity": "MEDIUM",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "reference_note": "GitHub advisory severity is MODERATE (CVSS 3.1 vector CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L).",
+      "fix_status": "Fixed upstream in minimist 0.2.1 (0.x line) and 1.2.3. Installed 0.0.8 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-vh95-rmgr-6w4m ; https://nvd.nist.gov/vuln/detail/CVE-2020-7598",
+      "date_reviewed": "2026-11-14",
+      "dispute_basis": "Lockfile-only image: the package is declared and locked in package-lock.json but NOT installed. A scanner that reports it (declared dependency) and one that does not (nothing installed) are both defensible, so this is recorded as behavior and counted separately, not as a miss."
+    }
+  ],
+  "clean_controls": "mkdirp 0.5.1 has no advisories (OSV, 2026-11-13); any finding on mkdirp is a false positive and is checked manually.",
+  "predictions": {
+    "status": "HYPOTHESES recorded before building or scanning; not part of the answer key. LOW confidence throughout.",
+    "detection": "Trivy reports both minimist advisories (it reads package-lock.json). Grype reports neither (image scans use installed-package metadata, and nothing is installed). Low confidence on both halves.",
+    "if_this_holds": "Native gates split: Trivy BLOCK on P1, P2 and P3, Grype PASS on all three. That would be a verdict split caused by a tool design choice, recorded as behavior (DISPUTED), not as a miss.",
+    "how_scored": "Reported-or-not is counted separately for DISPUTED entries; neither tool is penalized."
+  }
+}

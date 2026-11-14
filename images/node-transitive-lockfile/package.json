@@ -1,0 +1,9 @@
+{
+  "name": "node-transitive-cve",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test project: one direct dependency (mkdirp 0.5.1) that pulls in a vulnerable transitive dependency (minimist 0.0.8). Nothing here is ever run.",
+  "dependencies": {
+    "mkdirp": "0.5.1"
+  }
+}
