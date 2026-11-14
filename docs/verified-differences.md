@@ -30,18 +30,27 @@ Every comparison is same-image, same-tarball. Database snapshots differ between 
 - Native vs NVD-reference gates (scripts/gate_compare.py, disputed CVEs excluded): no pair changes between block and non-block when the label source switches. The three REVIEW/PASS changes are rule artifacts (unscored CVEs, advisory IDs excluded).
 - The REVIEW rule was in the original design but was wired into gate.py only after seeing the minimal image result; the committed prediction for that image was PASS (true under the old gate).
 - P2 and P3 are saturated on these images (many findings both tools call High), so severity differences cannot change those verdicts. Cleaner images are needed to test them.
+- Go binary image (image 6): native P2 is BLOCK for Trivy and PASS for Grype, the first BLOCK-vs-PASS split, caused by D7 (a verified miss), not by labeling or advisory-ID noise.
 - Status: VERIFIED as outputs.
 
 ## D6. Disputed CVE-2019-1010022 (glibc)
 - NVD rates it 9.8 CRITICAL; the answer key marks it DISPUTED (upstream treats it as a non-security bug). Grype labels it Negligible, Trivy LOW (image 2), so the NVD number is the outlier.
 - A naive NVD-reference gate would wrongly block image 2 on P1 because of it. The reference gate excludes keyed DISPUTED entries.
 
+## D7. Grype misses CVE-2020-26160 in a Go binary (image 6, jwt-go v3.2.0+incompatible)
+- Answer key: AFFECTED, HIGH (NVD primary 7.5). Trivy reports it (HIGH, no fix listed); Grype does not.
+- Grype catalogued the package correctly (purl pkg:golang/github.com/dgrijalva/jwt-go@v3.2.0%2Bincompatible), and its own database contains the advisory for that exact package: GHSA-w73w-5m7g-f7qc as a go-module record with range >=0.0.0-20150717181359-44718f8a89b0,<=3.2.0, plus an NVD CPE record for CVE-2020-26160 (<= 3.2.0). By semver rules the installed version is inside that range, so the miss happens at matching time.
+- Cause OPEN. Candidates: handling of the +incompatible suffix, or the pseudo-version lower bound in the range.
+- Effect: native P2 gate is BLOCK for Trivy and PASS for Grype, the first BLOCK-vs-PASS split. NVD-reference gates cannot change this: they only re-rate findings a tool reports.
+- Predictions scored (committed before any scan): detection 2/2 for both (wrong for Grype, 1/2); P2 BLOCK for both (wrong for Grype); P3 PASS for both on module findings (right: neither tool lists a fix for jwt-go; Trivy's REVIEW on P1 and P3 comes from distroless base advisories); both negative controls correctly unreported by both tools; the GHSA-only websocket advisory caught by both; no Go standard library findings from either tool for go1.26.11.
+- Status: VERIFIED miss. Cause OPEN.
+
 ## Not differences
 - Image 2 (requests 2.19.1): both tools 5/5 recall.
 - Image 3 (backported fixes): both tools 3/3 recall and 0 of 7 backport false positives.
 
 ## Limitations to state in the paper
-- Five images so far; two are should-pass images with empty keys.
+- Six images so far; two are should-pass images with empty keys.
 - NVD reference coverage: about 89 to 100% of CVE findings on images 1, 2 and 5, about 77% on image 3 (96 unscored CVEs).
 - Database snapshots differ between images; within-image comparisons are same-day.
 - The REVIEW rule and the exclusion of advisory-ID findings and disputed CVEs are design choices, documented above.
