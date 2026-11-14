@@ -1,0 +1,123 @@
+{
+  "image": "go-binary-cve",
+  "ecosystem": "Go",
+  "base_image": "golang:1.26 (build stage), gcr.io/distroless/static-debian12 (final stage)",
+  "base_digest": "gcr.io/distroless/static-debian12@sha256:d75cdd72874d4790092fcb1b058493ecf6bb5bf2b2b897045b00ff01d91843f2",
+  "build_image_digest": "golang:1.26@sha256:978e0a4e3d953662577d784471db27742f543ab09eead06839a838188c73314b",
+  "platform": "linux/amd64",
+  "scope": "Three Go modules linked into /app only. Go standard library findings and distroless base-image packages are OUT OF SCOPE for this key; they are counted separately.",
+  "severity_reference": "NVD primary CVSS base severity (nvd@nist.gov). Where no NVD record exists (GHSA-only advisory) the GitHub Advisory Database severity from the OSV record is used, with the source recorded. Scanner-native severities are not stored here.",
+  "key_built_before_scanning": true,
+  "nvd_checked": "2026-11-13",
+  "upstream_advisories_source": "OSV queries (Go ecosystem), 2026-11-13: jwt-go 3.2.0, websocket 1.4.0 and 1.4.2, yaml.v3 3.0.0 and 3.0.1",
+  "independence_note": "The key comes from OSV/GitHub advisory data and NVD, not from scanner output. OSV/GHSA data is also upstream of both scanners' databases, so agreement with it is not fully independent evidence.",
+  "status_meanings": {
+    "AFFECTED": "scanner SHOULD report it (counts toward recall)",
+    "FIXED_BY_BACKPORT": "scanner should NOT report it (reporting = false positive). In this image it is reused for 'already fixed upstream in the installed version', NOT for a backport: the scoring rule is identical.",
+    "DISPUTED": "counted separately"
+  },
+  "entries": [
+    {
+      "cve_id": "CVE-2020-26160",
+      "aliases": [
+        "GHSA-w73w-5m7g-f7qc",
+        "GO-2020-0017",
+        "SNYK-GOLANG-GITHUBCOMDGRIJALVAJWTGO-596515"
+      ],
+      "ecosystem": "Go",
+      "packages": [
+        "github.com/dgrijalva/jwt-go"
+      ],
+      "installed_version": "v3.2.0+incompatible",
+      "affected_status": "AFFECTED",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "NO FIXED VERSION in the v3 line (OSV: last_affected 3.2.0). The only 'fixed' version listed, 4.0.0-preview1, belongs to a different module path (github.com/dgrijalva/jwt-go/v4). Whether a scanner calls this 'fix available' is part of what this image tests (P3).",
+      "source": "https://osv.dev/vulnerability/GHSA-w73w-5m7g-f7qc ; https://nvd.nist.gov/vuln/detail/CVE-2020-26160",
+      "date_reviewed": "2026-11-13"
+    },
+    {
+      "cve_id": "GHSA-w67g-5rqw-f597",
+      "id_note": "No CVE assigned: GitHub advisory only (GO-2026-6278), published 2026-08-24. No NVD record exists.",
+      "aliases": [
+        "GO-2026-6278"
+      ],
+      "ecosystem": "Go",
+      "packages": [
+        "github.com/gorilla/websocket"
+      ],
+      "installed_version": "v1.4.2",
+      "affected_status": "AFFECTED",
+      "reference_severity": "MEDIUM",
+      "nvd": {
+        "checked": "no CVE, so no NVD record"
+      },
+      "reference_source": "GitHub Advisory Database via OSV: severity MODERATE (mapped to MEDIUM); CVSS 4.0 vector CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N; base score not computed here",
+      "summary": "Cryptographically weak PRNG for the WebSocket mask key",
+      "fix_status": "Fixed in v1.5.3 (OSV). Installed v1.4.2 is affected.",
+      "source": "https://osv.dev/vulnerability/GHSA-w67g-5rqw-f597",
+      "date_reviewed": "2026-11-13"
+    },
+    {
+      "cve_id": "CVE-2022-28948",
+      "aliases": [
+        "GHSA-hp87-p4gw-j4gq",
+        "GO-2022-0603"
+      ],
+      "ecosystem": "Go",
+      "packages": [
+        "gopkg.in/yaml.v3"
+      ],
+      "installed_version": "v3.0.1",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "NOT AFFECTED: fixed upstream in v3.0.1 and v3.0.1 is installed (OSV returns no advisories for yaml.v3 3.0.1). Status FIXED_BY_BACKPORT is reused only because the scoring rule is identical (reporting = false positive); this is not a backport.",
+      "source": "https://osv.dev/vulnerability/GHSA-hp87-p4gw-j4gq",
+      "date_reviewed": "2026-11-13"
+    },
+    {
+      "cve_id": "CVE-2020-27813",
+      "aliases": [
+        "GHSA-3xh2-74w9-5vxm",
+        "GHSA-jf24-p9p9-4rjh",
+        "GO-2020-0019"
+      ],
+      "ecosystem": "Go",
+      "packages": [
+        "github.com/gorilla/websocket"
+      ],
+      "installed_version": "v1.4.2",
+      "affected_status": "FIXED_BY_BACKPORT",
+      "reference_severity": "HIGH",
+      "nvd": {
+        "cvss_version": "3.1",
+        "base_score": 7.5,
+        "severity": "HIGH",
+        "score_source": "nvd@nist.gov (primary)"
+      },
+      "fix_status": "NOT AFFECTED: fixed upstream in v1.4.1; v1.4.2 is installed (OSV lists it for 1.4.0 but not 1.4.2). Status FIXED_BY_BACKPORT is reused only because the scoring rule is identical (reporting = false positive); this is not a backport.",
+      "source": "https://osv.dev/vulnerability/GHSA-3xh2-74w9-5vxm",
+      "date_reviewed": "2026-11-13"
+    }
+  ],
+  "predictions": {
+    "status": "HYPOTHESES recorded before building or scanning; not part of the answer key",
+    "detection": "Both scanners report both AFFECTED entries (recall 2/2) by reading the Go build info. Moderate confidence. Main uncertainties: (a) how each tool handles the +incompatible suffix on jwt-go; (b) whether each tool reports the GHSA-only websocket advisory, which has no CVE.",
+    "false_positives": "Neither scanner reports CVE-2022-28948 (yaml.v3) or CVE-2020-27813 (websocket 1.4.0-only issue).",
+    "P1": "PASS for both on module findings (no Critical expected). Go stdlib and distroless base findings are out of key scope and could change the gate result; they will be recorded separately.",
+    "P2": "BLOCK for both, driven by the HIGH jwt-go finding. Uncertain if a tool labels it lower than High.",
+    "P3": "PASS for both, driven by jwt-go having no fixed version in its module path (the websocket advisory is MEDIUM, so it cannot block P3). LOW confidence: a tool that shows the /v4 fix as 'fix available' would BLOCK P3, which would be the first BLOCK-vs-PASS split. This is the main reason this image exists.",
+    "how_scored": "Module findings are scored against the entries above. Stdlib findings and base-image findings are listed separately and not scored; the Go toolchain version is recorded after the build."
+  }
+}
