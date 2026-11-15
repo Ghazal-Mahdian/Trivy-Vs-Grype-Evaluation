@@ -1,0 +1,118 @@
+# Scan each test image with Trivy and Grype, apply the release gate, record timing.
+#
+# Rules this workflow follows (same as the local experiment):
+#  - Each scanner runs in its OWN job and is gated on its OWN report. The two are never combined.
+#  - Both scanners scan the same saved tarball of the image.
+#  - All three policies (P1, P2, P3) are always recorded in the job summary.
+#  - The job then fails if the chosen policy does not PASS. BLOCK, REVIEW (unknown severity)
+#    and ERROR (missing or invalid report) all fail the job: a scan that did not finish
+#    must never look like a pass.
+name: scan-and-gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      enforce_policy:
+        description: "Policy that fails the job (all three are always recorded)"
+        type: choice
+        options: [P1, P2, P3]
+        default: P2
+  pull_request:
+    paths:
+      - "images/**"
+      - "scripts/gate.py"
+      - ".github/workflows/scan.yml"
+
+permissions:
+  contents: read
+
+env:
+  TRIVY_VERSION: v0.74.0
+  GRYPE_VERSION: v0.120.0
+
+jobs:
+  scan:
+    name: ${{ matrix.scanner }} on ${{ matrix.image }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        scanner: [trivy, grype]
+        image: [minimal-base-pass, app-dependency-cve, go-binary-cve, node-transitive-installed]
+    env:
+      SCANNER: ${{ matrix.scanner }}
+      IMAGE: ${{ matrix.image }}
+      ENFORCE: ${{ inputs.enforce_policy || 'P2' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build --platform=linux/amd64 -t "$IMAGE" "images/$IMAGE"
+
+      - name: Save image to a tarball
+        run: |
+          mkdir -p work reports
+          docker save "$IMAGE" -o "work/$IMAGE.tar"
+
+      - name: Install Trivy
+        if: matrix.scanner == 'trivy'
+        run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin "$TRIVY_VERSION"
+
+      - name: Install Grype
+        if: matrix.scanner == 'grype'
+        run: curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sudo sh -s -- -b /usr/local/bin "$GRYPE_VERSION"
+
+      - name: Scan (timed; includes the first-run database download)
+        run: |
+          start=$(date +%s.%N)
+          if [ "$SCANNER" = "trivy" ]; then
+            trivy --version
+            trivy image --input "work/$IMAGE.tar" --scanners vuln --skip-version-check --format json -o "reports/$SCANNER-$IMAGE.json"
+          else
+            grype version
+            grype "docker-archive:work/$IMAGE.tar" -o json > "reports/$SCANNER-$IMAGE.json"
+          fi
+          end=$(date +%s.%N)
+          awk -v s="$start" -v e="$end" 'BEGIN{printf "%.1f\n", e-s}' > "reports/timing-$SCANNER-$IMAGE.txt"
+          echo "scan seconds: $(cat reports/timing-$SCANNER-$IMAGE.txt)"
+
+      - name: Record all three gate verdicts
+        if: always()
+        run: |
+          mkdir -p reports
+          {
+            echo "### $SCANNER on $IMAGE"
+            echo ""
+            echo "| policy | verdict |"
+            echo "|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+          for p in P1 P2 P3; do
+            set +e
+            python3 scripts/gate.py --scanner "$SCANNER" --policy "$p" --report "reports/$SCANNER-$IMAGE.json" > "reports/gate-$SCANNER-$IMAGE-$p.txt" 2>&1
+            code=$?
+            set -e
+            case $code in
+              0) v=PASS ;;
+              1) v=BLOCK ;;
+              3) v=REVIEW ;;
+              *) v="ERROR (fail closed)" ;;
+            esac
+            echo "$p $v" >> "reports/verdicts-$SCANNER-$IMAGE.txt"
+            echo "| $p | $v |" >> "$GITHUB_STEP_SUMMARY"
+          done
+          if [ -f "reports/timing-$SCANNER-$IMAGE.txt" ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Scan time: $(cat reports/timing-$SCANNER-$IMAGE.txt) s (cold runner, includes database download)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.scanner }}-${{ matrix.image }}
+          path: reports/
+          if-no-files-found: warn
+
+      - name: Enforce the chosen policy (fails the job unless PASS)
+        if: always()
+        run: python3 scripts/gate.py --scanner "$SCANNER" --policy "$ENFORCE" --report "reports/$SCANNER-$IMAGE.json"
