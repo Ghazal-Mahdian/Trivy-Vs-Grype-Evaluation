@@ -1,4 +1,5 @@
-# Scan each test image with Trivy and Grype, apply the release gate, record timing.
+# Scan each test image with Trivy and Grype on a fresh runner, apply the release gate,
+# record tool and database versions, and time the database download and the scan.
 #
 # Rules this workflow follows (same as the local experiment):
 #  - Each scanner runs in its OWN job and is gated on its OWN report. The two are never combined.
@@ -7,6 +8,8 @@
 #  - The job then fails if the chosen policy does not PASS. BLOCK, REVIEW (unknown severity)
 #    and ERROR (missing or invalid report) all fail the job: a scan that did not finish
 #    must never look like a pass.
+#  - Every run starts from a fresh vulnerability database, so all images in one run share
+#    the same database day. The database build date is saved with the reports.
 name: scan-and-gate
 
 on:
@@ -38,7 +41,16 @@ jobs:
       fail-fast: false
       matrix:
         scanner: [trivy, grype]
-        image: [minimal-base-pass, app-dependency-cve, go-binary-cve, node-transitive-installed]
+        image:
+          - os-package-cve
+          - app-dependency-cve
+          - backport-fix-cve
+          - minimal-base-pass
+          - updated-base-pass
+          - go-binary-cve
+          - node-transitive-installed
+          - node-transitive-lockfile
+          - java-shaded-jar-cve
     env:
       SCANNER: ${{ matrix.scanner }}
       IMAGE: ${{ matrix.image }}
@@ -62,19 +74,42 @@ jobs:
         if: matrix.scanner == 'grype'
         run: curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sudo sh -s -- -b /usr/local/bin "$GRYPE_VERSION"
 
-      - name: Scan (timed; includes the first-run database download)
+      - name: Prepare vulnerability database (timed)
         run: |
-          start=$(date +%s.%N)
+          elapsed() { awk -v s="$1" -v e="$2" 'BEGIN{printf "%.1f", e-s}'; }
+          t0=$(date +%s.%N)
           if [ "$SCANNER" = "trivy" ]; then
-            trivy --version
-            trivy image --input "work/$IMAGE.tar" --scanners vuln --skip-version-check --format json -o "reports/$SCANNER-$IMAGE.json"
+            trivy image --download-db-only --quiet
+            # Trivy needs a separate Java database for jar scanning (about 950 MB).
+            if [ "$IMAGE" = "java-shaded-jar-cve" ]; then trivy image --download-java-db-only --quiet; fi
+            trivy --version > "reports/tool-$SCANNER-$IMAGE.txt"
           else
-            grype version
-            grype "docker-archive:work/$IMAGE.tar" -o json > "reports/$SCANNER-$IMAGE.json"
+            grype db update
+            { grype version; grype db status; } > "reports/tool-$SCANNER-$IMAGE.txt" 2>&1
           fi
-          end=$(date +%s.%N)
-          awk -v s="$start" -v e="$end" 'BEGIN{printf "%.1f\n", e-s}' > "reports/timing-$SCANNER-$IMAGE.txt"
-          echo "scan seconds: $(cat reports/timing-$SCANNER-$IMAGE.txt)"
+          t1=$(date +%s.%N)
+          echo "db_prep_seconds $(elapsed "$t0" "$t1")" > "reports/timing-$SCANNER-$IMAGE.txt"
+          cat "reports/tool-$SCANNER-$IMAGE.txt"
+
+      - name: Scan 3 times (timed; run 1 is the report, database already local)
+        run: |
+          elapsed() { awk -v s="$1" -v e="$2" 'BEGIN{printf "%.1f", e-s}'; }
+          scan_once() {
+            if [ "$SCANNER" = "trivy" ]; then
+              trivy image --input "work/$IMAGE.tar" --scanners vuln --skip-version-check --skip-db-update --skip-java-db-update --format json -o "$1"
+            else
+              GRYPE_DB_AUTO_UPDATE=false grype "docker-archive:work/$IMAGE.tar" -o json > "$1"
+            fi
+          }
+          for n in 1 2 3; do
+            out="reports/$SCANNER-$IMAGE.json"
+            [ "$n" -gt 1 ] && out="/tmp/scan-$n.json"
+            t0=$(date +%s.%N)
+            scan_once "$out"
+            t1=$(date +%s.%N)
+            echo "scan_run_$n $(elapsed "$t0" "$t1")" >> "reports/timing-$SCANNER-$IMAGE.txt"
+          done
+          cat "reports/timing-$SCANNER-$IMAGE.txt"
 
       - name: Record all three gate verdicts
         if: always()
@@ -101,8 +136,7 @@ jobs:
             echo "| $p | $v |" >> "$GITHUB_STEP_SUMMARY"
           done
           if [ -f "reports/timing-$SCANNER-$IMAGE.txt" ]; then
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "Scan time: $(cat reports/timing-$SCANNER-$IMAGE.txt) s (cold runner, includes database download)" >> "$GITHUB_STEP_SUMMARY"
+            { echo ""; echo '```'; cat "reports/timing-$SCANNER-$IMAGE.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Upload reports
