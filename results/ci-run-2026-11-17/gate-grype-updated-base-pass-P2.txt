@@ -1,0 +1,8 @@
+grype report: 220 findings; by severity: CRITICAL=2, HIGH=52, MEDIUM=84, LOW=18, NEGLIGIBLE=64
+  blocking: CVE-2025-13151 libtasn1-6 HIGH fix=False
+  blocking: CVE-2026-82560 perl-base HIGH fix=False
+  blocking: CVE-2026-5450 libc-bin CRITICAL fix=False
+  blocking: CVE-2026-5450 libc6 CRITICAL fix=False
+  blocking: CVE-2026-41992 gzip HIGH fix=False
+  ... and 49 more
+RESULT: BLOCK (P2, 54 blocking findings)

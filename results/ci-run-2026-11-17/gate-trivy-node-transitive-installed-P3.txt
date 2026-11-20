@@ -1,0 +1,3 @@
+trivy report: 6 findings; by severity: CRITICAL=1, MEDIUM=1, UNKNOWN=4
+  blocking: CVE-2021-44906 minimist CRITICAL fix=True
+RESULT: BLOCK (P3, 1 blocking findings)

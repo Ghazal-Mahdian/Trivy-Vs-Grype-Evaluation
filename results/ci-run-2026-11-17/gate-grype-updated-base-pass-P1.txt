@@ -1,0 +1,4 @@
+grype report: 220 findings; by severity: CRITICAL=2, HIGH=52, MEDIUM=84, LOW=18, NEGLIGIBLE=64
+  blocking: CVE-2026-5450 libc-bin CRITICAL fix=False
+  blocking: CVE-2026-5450 libc6 CRITICAL fix=False
+RESULT: BLOCK (P1, 2 blocking findings)

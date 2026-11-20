@@ -1,0 +1,2 @@
+grype report: 220 findings; by severity: CRITICAL=2, HIGH=52, MEDIUM=84, LOW=18, NEGLIGIBLE=64
+RESULT: PASS (P3)

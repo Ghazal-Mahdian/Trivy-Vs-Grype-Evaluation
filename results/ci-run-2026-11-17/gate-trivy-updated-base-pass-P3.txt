@@ -1,0 +1,7 @@
+trivy report: 226 findings; by severity: CRITICAL=1, HIGH=37, MEDIUM=98, LOW=85, UNKNOWN=5
+  needs review: CVE-2026-91094 dpkg UNKNOWN fix=False
+  needs review: CVE-2026-100290 libc-bin UNKNOWN fix=False
+  needs review: CVE-2026-115819 libc-bin UNKNOWN fix=False
+  needs review: CVE-2026-100290 libc6 UNKNOWN fix=False
+  needs review: CVE-2026-115819 libc6 UNKNOWN fix=False
+RESULT: REVIEW (P3, 5 findings with unknown severity)

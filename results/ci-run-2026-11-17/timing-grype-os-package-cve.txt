@@ -1,0 +1,4 @@
+db_prep_seconds 81.1
+scan_run_1 1.8
+scan_run_2 1.7
+scan_run_3 1.7

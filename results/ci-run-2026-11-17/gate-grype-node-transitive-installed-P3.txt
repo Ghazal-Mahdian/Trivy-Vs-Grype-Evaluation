@@ -1,0 +1,3 @@
+grype report: 2 findings; by severity: CRITICAL=1, MEDIUM=1
+  blocking: GHSA-xvch-5gv4-984h minimist CRITICAL fix=True
+RESULT: BLOCK (P3, 1 blocking findings)

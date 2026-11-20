@@ -1,0 +1,2 @@
+grype report: 0 findings; by severity: 
+RESULT: PASS (P1)

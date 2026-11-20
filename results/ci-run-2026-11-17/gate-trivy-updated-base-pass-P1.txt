@@ -1,0 +1,3 @@
+trivy report: 226 findings; by severity: CRITICAL=1, HIGH=37, MEDIUM=98, LOW=85, UNKNOWN=5
+  blocking: CVE-2023-45853 zlib1g CRITICAL fix=False
+RESULT: BLOCK (P1, 1 blocking findings)

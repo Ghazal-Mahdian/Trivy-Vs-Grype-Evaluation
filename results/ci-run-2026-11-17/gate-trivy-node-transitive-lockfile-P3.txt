@@ -1,0 +1,6 @@
+trivy report: 4 findings; by severity: UNKNOWN=4
+  needs review: DLA-4845-1 ca-certificates UNKNOWN fix=True
+  needs review: DLA-4792-1 tzdata UNKNOWN fix=True
+  needs review: DLA-4854-1 tzdata UNKNOWN fix=True
+  needs review: DLA-4867-1 tzdata UNKNOWN fix=True
+RESULT: REVIEW (P3, 4 findings with unknown severity)
