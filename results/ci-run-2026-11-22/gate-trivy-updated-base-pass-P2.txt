@@ -1,0 +1,8 @@
+trivy report: 237 findings; by severity: CRITICAL=1, HIGH=37, MEDIUM=100, LOW=89, UNKNOWN=10
+  blocking: CVE-2026-53613 bsdutils HIGH fix=False
+  blocking: CVE-2026-53615 bsdutils HIGH fix=False
+  blocking: CVE-2026-78410 bsdutils HIGH fix=False
+  blocking: CVE-2026-41992 gzip HIGH fix=False
+  blocking: CVE-2026-54369 libacl1 HIGH fix=False
+  ... and 33 more
+RESULT: BLOCK (P2, 38 blocking findings)

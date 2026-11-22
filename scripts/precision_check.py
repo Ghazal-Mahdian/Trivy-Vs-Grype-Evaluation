@@ -3,7 +3,7 @@
 
 Rules are in docs/precision-plan.md (written before this ran). Usage, from the repo root:
   python3 scripts/precision_check.py [--data results/ci-run-2026-11-17]
-Writes results/precision.md and results/precision-findings.csv.
+Writes results/precision.md and results/precision-findings.csv (or --out / --csv).
 """
 import argparse, csv, json, re, subprocess, collections
 from pathlib import Path
@@ -66,6 +66,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="results/ci-run-2026-11-17")
     ap.add_argument("--tracker", default="ground-truth/evidence/debian-tracker.json")
+    ap.add_argument("--out", default="results/precision.md")
+    ap.add_argument("--csv", default="results/precision-findings.csv")
     a = ap.parse_args()
     tr = json.load(open(a.tracker)); data = Path(a.data); rows = []
     for img in IMAGES:
@@ -85,7 +87,7 @@ def main():
     by = collections.defaultdict(set)
     for r in rows: by[(r["image"], r["key"])].add(r["tool"])
     for r in rows: r["reported_by"] = "both" if len(by[(r["image"], r["key"])]) == 2 else "only_" + r["tool"]
-    with open("results/precision-findings.csv", "w", newline="") as fh:
+    with open(a.csv, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=[k for k in rows[0] if k != "key"], extrasaction="ignore"); w.writeheader(); w.writerows(rows)
 
     def tally(rs):
@@ -112,6 +114,6 @@ def main():
     L += ["\n## Why findings were undecidable\n", "| Tool | Reason | Count |", "|---|---|---|"]
     c = collections.Counter((r["tool"], r["reason"]) for r in rows if r["label"] == "UNDECIDABLE")
     for (tool, why), n in sorted(c.items()): L.append(f"| {tool} | {why} | {n} |")
-    Path("results/precision.md").write_text("\n".join(L) + "\n"); print("\n".join(L))
+    Path(a.out).write_text("\n".join(L) + "\n"); print("\n".join(L))
 
 main()

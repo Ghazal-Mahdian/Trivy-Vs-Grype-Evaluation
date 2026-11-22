@@ -1,0 +1,15 @@
+Application:         grype
+Version:             0.120.0
+BuildDate:           2026-10-02T14:05:58Z
+GitCommit:           10fbc043ecbaf8436daa9efac9f1632557caf277
+GitDescription:      v0.120.0
+Platform:            linux/amd64
+GoVersion:           go1.26.8
+Compiler:            gc
+Syft Version:        v1.54.0
+Supported DB Schema: 6
+Path:      /home/runner/.cache/grype/db/6/vulnerability.db
+Schema:    v6.1.10
+Built:     2026-11-21T06:20:06Z
+From:      https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.10_2026-11-21T00:21:39Z_1795242006.tar.zst?checksum=sha256%3A921d1b1b4151a211d39efbb8a7da54caabfc6eb717112766cb5bdee7920809b5
+Status:    valid

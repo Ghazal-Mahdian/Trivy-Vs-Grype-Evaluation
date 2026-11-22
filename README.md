@@ -9,7 +9,7 @@ Each test image is purpose-built and paired with an **answer key** written from 
 
 **Author:** Ghazal Mahdian · MS Cybersecurity, California State University, Dominguez Hills
 
-**Status:** all nine images are scanned, scored and gated, and a same-day GitHub Actions dataset is collected. The paper is being finished.
+**Status:** all nine images are scanned, scored and gated, and two GitHub Actions datasets (2026-11-17 and 2026-11-22) are collected. The paper is being finished.
 
 ---
 
@@ -20,7 +20,9 @@ Numbers come from the CI dataset in [`results/ci-run-2026-11-17`](results/ci-run
 - **Detection:** both tools caught **25 of 26** keyed vulnerabilities, but missed different ones. Trivy missed CVE-2021-3999 on the old OS image (D1). Grype missed the jwt-go CVE-2020-26160 in the Go binary (D7).
 - **Gate verdicts:** across 27 image × policy cells, the tools matched in **16** and differed in **11**. In 10 of those 11 the release decision changed, and in all 10 Trivy was the stricter one. In 9 of them Trivy returned REVIEW where Grype returned PASS, because Trivy reports Debian advisory IDs with unknown severity (D4).
 - **Finding counts don't predict verdicts:** for example the OS image has 68 Trivy findings vs 209 Grype findings, yet both tools block on all three policies.
-- **CI timing (single run):** database setup took a median of 5.4 s for Trivy vs 64.8 s for Grype. The scans themselves took a few seconds or less.
+- **Precision (Debian OS packages, checked against the Debian Security Tracker):** nearly identical for both tools. The first run had 12 shared false positives; a repeat run on newer databases had none (`results/precision.md`, `results/precision-run2.md`).
+- **Repeat run (2026-11-22, [`results/ci-run-2026-11-22`](results/ci-run-2026-11-22)):** detection and all 27 gate verdicts were identical to the first run.
+- **CI timing:** database setup took a median of 5.4 s (run 1) and 5.0 s (run 2) for Trivy vs 64.8 s and 79.9 s for Grype. The scans themselves took a few seconds or less.
 
 Every difference was checked against the raw reports and is logged in [`docs/verified-differences.md`](docs/verified-differences.md), including the ones whose cause is still open.
 
@@ -120,7 +122,7 @@ Results can shift as the vulnerability databases update, so the tool and databas
 - **REVIEW rule added after seeing data:** it was wired into the gate after the clean minimal image, where the earlier prediction had been PASS.
 - **Two harness bugs** were found and fixed (Maven package names; disputed CVEs leaking between images). Re-scoring every image changed only Trivy's Java result (0/9 to 9/9).
 - **Keys are not fully independent:** OSV and GHSA data is upstream of both scanners' databases, and NVD is a severity reference, not the truth.
-- **Precision was not sampled:** findings outside the keys were counted, not checked one by one.
-- **Single CI run:** timing is from one run on one day, and the Trivy Java job was rerun with a later database (documented in the dataset README).
+- **Precision covers OS packages only**, against Debian tracker data that both scanners also use; language-package precision rests on the negative controls.
+- **Two CI runs:** timing varied between them, and in the first run the Trivy Java job was rerun with a later database (documented in the dataset README).
 - **Open causes:** why Trivy missed CVE-2021-3999 (D1) and why Grype missed the jwt-go CVE (D7), and why Grype reports CVE-2026-115557 on CPython when Trivy does not (D8).
 - **CI hardening:** the workflow installs tools with the official install scripts and pins actions by tag, not by commit hash.
