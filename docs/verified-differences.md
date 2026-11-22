@@ -60,3 +60,22 @@ Every comparison is same-image, same-tarball. Database snapshots differ between 
 - The REVIEW rule and the exclusion of advisory-ID findings and disputed CVEs are design choices, documented above.
 - Harness bug found and fixed on image 9: the first scoring run showed Trivy at 0/9 because Trivy names Java packages as Maven coordinates (org.yaml:snakeyaml) while the key and Grype use the artifact name (snakeyaml). Trivy's own scan summary (9 matches) contradicted the 0/9, which is how it was caught. compare_findings.py now compares the artifact part of the name; re-scoring every image changed only this one result (Trivy Java 0/9 to 9/9). The fix concerns name matching only, not which advisory IDs count.
 - Earlier harness bug (found on image 7): gate_compare.py shared DISPUTED CVEs between images. Fixed so an image's own key decides, with only the glibc dispute shared explicitly.
+
+## CI dataset notes (added 2026-11-21)
+- Source: results/ci-run-2026-11-17 (GitHub Actions run 44117670618, commit fcf833f; Trivy 0.74.0, Grype 0.120.0; Trivy DB UpdatedAt 2026-11-17 13:00 UTC, Grype DB built 2026-11-17 06:20 UTC). Tables: results/tables.md (made by scripts/make_tables.py).
+- The CI run reproduced the local detection results: 25 of 26 keyed entries for both tools, with the same two misses (D1 Trivy, D7 Grype).
+- Gate verdicts in CI: 27 cells, 16 identical, 11 different, 10 of those change the release decision, all with Trivy stricter (9 are Trivy REVIEW vs Grype PASS, the D4 pattern). This supersedes the "5 of 15" count in D5, which covered only the first five images.
+- If REVIEW is treated as PASS, 2 cells still differ: app dependency P1 (Trivy REVIEW vs Grype BLOCK) and Go binary P2 (Trivy BLOCK vs Grype PASS, D7).
+- Update to image 8: the CI run again found neither tool reporting the lockfile-only packages. A filesystem scan of the same files is still untested.
+- Update to D4: the "Grype: 0 in every report checked" count covers the local reports only. See results/tables.md for the CI finding counts.
+
+## D8. Grype reports a CPython interpreter CVE that Trivy does not (CVE-2026-115557)
+- In the CI run, Grype reported CVE-2026-115557 as Critical on python 3.12.15. Trivy did not report it.
+- Possible cause: database age or coverage (the two databases were built hours apart on 2026-11-17). NOT verified. I did not confirm when this CVE was published or whether Trivy's database carries it.
+- Why it matters: a Critical from one tool only changes a P1 verdict, so the result depends on which database the pipeline downloaded that day.
+- Status: VERIFIED as output. Cause OPEN.
+
+## CI timing observation
+- Database setup (median across nine images): Trivy 5.4 s, Grype 64.8 s. Scans took a few seconds or less. Single run, one day. Why Grype's setup is slower was not investigated.
+- Trivy's Java image needed a separate Java database: about 13 s of an 18.1 s setup step on CI, against 76 s on a home network. The local figure reflects that network, not the tool.
+- The Trivy Java job was rerun after Maven Central timeouts in the image build, so it used a Nov 20 database. This is recorded in the CI README.
