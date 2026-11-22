@@ -71,8 +71,8 @@ Every comparison is same-image, same-tarball. Database snapshots differ between 
 
 ## D8. Grype reports a CPython interpreter CVE that Trivy does not (CVE-2026-115557)
 - In the CI run, Grype reported CVE-2026-115557 as Critical on python 3.12.15. Trivy did not report it.
-- Possible cause: database age or coverage (the two databases were built hours apart on 2026-11-17). NOT verified. I did not confirm when this CVE was published or whether Trivy's database carries it.
-- Why it matters: a Critical from one tool only changes a P1 verdict, so the result depends on which database the pipeline downloaded that day.
+- Not explained by database age: OSV shows Python published this CVE on 2026-10-24 (a certificate denylist for the ssl module, PSF-2026-46), before both databases were built on 2026-11-17. Cause OPEN; I did not check whether Trivy's database carries the record or what NVD rates it.
+- Why it matters: a Critical from one tool only changes a P1 verdict, so which tool a pipeline uses can decide a block.
 - Status: VERIFIED as output. Cause OPEN.
 
 ## CI timing observation
